@@ -1,0 +1,124 @@
+@import url(default.css);  /*default.css.불러오기*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+html, body {
+    font-family: "Pretendard", sans-serif; /*sans-serif : 고딕체라는 의미*/
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.4;  /*행간*/
+    word-break: keep-all;  /*단어별로 줄바꿈*/
+    letter-spacing: 0;  /*자간*/
+}
+#wrap { /*홈페이지 전체를 감싸는 요소*/
+    min-width: 1260px; /*최소 사이즈*/
+}
+.wrapper { /*홈페이지 넓이 제한, 가운데정렬*/
+    width: 1260px;
+    margin: 0 auto;
+}
+.notice h1 {
+    color: #1d1d1d;
+    font-size: 45px;
+    font-weight: 800;
+    margin: 130px 0 35px 0;
+}
+.notice ul {
+    display: flex;
+    justify-content: space-between
+}
+/*  li와 a사이즈를 같게 하기 위해서 - 
+    <li>        --- 넓이값
+        <a></a> --- 높이값
+    <li>
+    a에 높이를 주면 li는 a의 높이값을 동일하게 갖음
+    감싸는 요소는 내부요소의 높이값만큼 높이가 생성됨 */
+.notice ul li {
+    width: 404px;
+}
+.notice ul li a {
+    height: 298px;
+    background-color: #f7f7f7;
+    display: block; /*넓이100%*/
+    border-radius: 20px; /*모서리 둥근값*/
+    padding: 45px 50px 0 50px;
+}
+.notice ul li a strong {
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    display: block;
+    margin: 0 0 15px 0;
+}
+.notice ul li a .memo {
+    display: block;
+}
+.notice ul li a .group {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    margin: 20px 0 0 0;
+    padding: 20px 0 0 0;
+}
+
+/*마우스오버*/
+.notice ul li a:hover {
+    background-color: #275ecd;
+    color: rgba(255,255,255,0.8);
+}
+.notice ul li a:hover strong {
+    color: #fff;
+}
+.notice ul li a:hover .group {
+    border-top: 1px solid rgba(255,255,255,0.2);       
+}
+.bbs ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 46px 0 0 0;   
+}
+.bbs ul li {
+    width: 404px;
+}
+.bbs ul li a {
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    height: 298px;
+    display: block;
+    padding: 40px 45px 0 45px;
+    border: 5px solid #f7f7f7;
+    /*border 값과 padding 값 합산값이 여백으로 들어감*/
+}
+.bbs ul li a div {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    margin: 20px 0 0 0;
+    padding: 20px 0 0 0;
+}
+.bbs ul li h2 {
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+/*마우스를 오버했을 때 border를 주고자 한다면 원래 있는 border의 색상만 변경된 것으로 해야함 - 원래 배경색과 같은색으로 줌*/
+.bbs ul li a:hover {
+    background-color: #fff;
+    border: 5px solid #275ecd;
+    box-shadow: 10px 10px 20px rgba(39,94,205,0.2);
+}
