@@ -1,0 +1,185 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.sound {background: url(../images/sound_bg.png) no-repeat center center / cover;
+    color: #fff; text-align: center; height: 572px;}
+.sound h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 199px 0 28px 0;
+}
+.sound p {
+    margin: 0 392px;
+    /*글자 좌우에 여백이 있어서 글자가 들어갈 공간이 좁아서 
+    글자가 2줄이 되도록 함 width로 주면 가운데 정렬이 안됨*/
+}
+
+@media screen and (max-width:640px){
+    .sound { height: auto; padding: 0 0 73px 0; }
+        /*높이 설정해준 것 해제 - 원래 스타일대로 적용
+        콘텐츠의 높이에 맞춰서 자동으로 늘어나는 스타일*/
+    .sound h2 { font-size: 35px; padding: 76px 0 0 0; }
+    .sound p { margin: 0; /*pc버전에서 준 여백을 삭제하려면 0을 줌*/ }
+}/*media*/
+
+.health {
+    background: url(../images/sound_bg.png) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+    padding: 199px 0;
+}
+.health h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 28px 0;
+}
+@media screen and (max-width:640px){
+    .health { padding: 76px 0; }
+    .health h2 { font-size: 35px; }
+    .health p br { display: none; } /*줄바꿈을 주던 태그를 삭제*/
+}/*media*/
+
+.solution {
+    background: url(../images/sound_bg.png) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+    padding: 199px 0;
+}
+.solution h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 28px 0;
+}
+.solution p span {
+    display: block; /*줄바꿈*/
+}
+@media screen and (max-width:640px){
+    .solution { padding: 76px 0; }
+    .solution h2 { font-size: 35px; }
+    .solution p span { display: inline; /*줄바꿈 해제*/ }
+}/*media*/
+
+.story {
+    margin: 179px 0 0 0;
+}
+.story .group1, .story .group2 {
+    display: flex;
+    align-items: center
+}
+.story .group2 {
+    flex-direction: row-reverse;
+    margin: 41px 0 0 0;
+}
+.story .txt {
+    width: 630px;
+    padding: 0 0 0 83px;
+}
+.story .txt strong {
+    font-weight: 800;
+    color: #377F7E;
+}
+.story .txt h2 {
+    font-weight: 800;
+    font-size: 50px;
+    color: #2d2d2d;
+    margin: 10px 0 38px 0;
+    line-height: 1.1;
+}
+.story .txt .more a {
+    margin: 22px 0 0 0;
+    color: #fff;
+    padding: 8px 90px 9px 25px;
+    background-color: #377F7E;
+    display: inline-block;
+    position: relative; /**/
+}
+.story .txt .more a::after {
+    background: url(../images/more.svg) no-repeat center center / contain;
+    /*아이콘같이 전체가 보여야하는 경우 contain - 이미지 안잘림
+      배경에 이미지를 넣은 경우 cover - 이미지 짤림
+      둘 다 영역의 크기에 맞춰서 이미지가 리사이즈됨.*/
+    content: ""; 
+    right: 21px;
+    top: 10px;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    /*after, before 가상선택자는 반드시 content 속성을 줘야 나타남
+    넓이와 높이가 존재하지 않음
+    이미지를 배경으로 넣으려면 이미지 사이즈를 넓이와 높이로 지정해주어야함
+    위치가 태그의 시작위치 종료위치 마음대로 배치됨.
+    내가 원하는 위치에 배치하려면 absolute로 배치해야함
+    before, after 가상선택자는 반드시 absolute를 준다고 생각하면 됨.*/
+}
+.story .photo { /*이미지태그 하단에는 행간이 적용됨 -> 이미지 아래 여백*/
+    font-size: 0;
+    line-height: 0; /*여백 없애기*/
+}
+@media screen and (max-width:640px){
+    .story { margin: 0; }
+    .story .group1, .story .group2 { display: block }
+        /*display:flex를 해제하기 위해서
+            display 속성 중에서 적합한 것으로 대체
+            align-items: center; --flex 일때만 적용되는 속성 - 해제 필요X*/
+    .story .group2 {}
+        /*flex-direction: row-reverse; -- flex 일때만 적용되는 속성*/
+    .story .txt { width: auto; padding: 0; margin: 63px 0 17px 0; }
+        /*넓이를 제한한 것 해제*/
+    .story .txt h2 { font-size: 30px; margin: 6px 0 23px 0; line-height: 1; }
+    .story .txt strong { margin: 0 31.25% 0 0; display: block;}
+    .story .txt strong br { display: none;} /*br 줄바꿈 삭제*/
+    .story .txt .more a {
+        margin: 20px 0 0 0;
+        padding: 8px 90px 9px 25px;
+        display: inline-block;
+        position: relative; }
+    .story .txt .more a::after { right: 21px; top: 10px; height: 14px; width: 14px; }
+    .story .photo { 
+        font-size: 0;
+        line-height: 0;
+    }
+    .story .photo img { width: 100%; } /*photo 넓이의 100%*/
+}
+
+.news h2 {font-size: 60px; font-weight: 800; line-height: 1; margin: 200px 0 60px 0;}
+.news ul {display: flex; justify-content: space-between;}
+.news ul li {width: 297px; border: 1px solid #eee;}
+.news ul li a {padding: 30px 31px; display: block;}
+.news ul li a h3 {font-size: 18px; font-weight: 800; line-height:1.2; color: #2d2d2d; margin: 28px 0 17px 0;
+    /*1줄로 제한하기 - 주의사항 padding 절대 금지*/
+    white-space: nowrap; /*줄바꿈 금지*/
+    overflow: hidden; /*영역에서 넘치는 부분 자르기 - 이 요소가 block 요소여야함*/
+    text-overflow: ellipsis; /*글자 마지막에...추가 - 글자가 잘리는 현상 방지*/}
+.news ul li a strong {color: #377F7E;}
+.news ul li a p {
+    /*3줄로 제한 - 주의사항 padding 절대 금지*/
+    line-height: 1.4;
+    height: 4.2em; /*행간 X 줄수 = 단위는 em*/
+    overflow: hidden; /*영역에서 넘치는 부분 자르기*/}
+.news ul li a span {color: #666; margin: 51px 0 0 0; display: block;}
+@media screen and (max-width:640px){
+    .news h2 {font-size: 30px; font-weight: 800; margin: 135px 0 20px 0;}
+    .news ul {flex-wrap: wrap;} /*2줄씩 2개로 나오게*/
+    .news ul li {width: calc(50% - 8px); border: 1px solid #eee; margin-bottom: 16px;}
+    .news ul li a {padding: 30px 31px; display: block;}
+    .news ul li a h3 {font-size: 18px; font-weight: 800; line-height:1.2; color: #2d2d2d; margin: 28px 0 17px 0;
+        white-space: nowrap;
+        overflow: hidden; 
+        text-overflow: ellipsis; }
+    .news ul li a p {
+        line-height: 1.4;
+        height: 4.2em;
+        overflow: hidden;}
+    .news ul li a span {color: #666; margin: 51px 0 0 0; display: block;}
+}/*media*/
+@media screen and (max-width:500px){
+    .news ul {flex-wrap: nowrap; /*줄바꿈 금지*/ flex-direction: column; /*세로로 배치*/} 
+    .news ul li {width: auto; /*넓이 제한 풀기*/}
+}/*media*/
+
+
+.container {margin-bottom: 150px;}
