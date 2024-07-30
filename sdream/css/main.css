@@ -1,0 +1,243 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+/*폰트2개 - 제목:gmarket , 본문:pretendard
+  body에는 본문 서체 적용.
+  
+  제목 서체를 적용하는 방법
+  1. css에서 해당 요소를 모두 선택해서 
+  .biz h2 이렇게 각각 불러서 gmarket 서체 적용 - font-family:gmarket 계속 선언
+
+  2. css를 하나를 만듦
+  예를 들어 .tit 이라고
+  html에서 gmarket 서체를 써야하는 html요소에
+  <section class="biz">
+    <h2 class="tit"></h2> -- 필요한 곳에 class명을 주는 방식
+  </section> */
+
+.tit {font-family: 'GmarketSans', sans-serif; font-weight: 500; line-height: 1.2;}
+.tit_b {font-family: 'GmarketSans', sans-serif; font-weight: 700; line-height: 1.2;}
+
+header {position: absolute; left: 0; top: 0; width: 100%; height: 100px; border-bottom: 1px solid rgba(255,255,255,0.2); color: #fff;
+    z-index: 100;} /*position을 가지고 있는 요소들 중에서 제일 높은 숫자를 줘서 위에 배치 - 메뉴 작동*/
+header .wrapper {display: flex; justify-content: space-between;}
+header .logo {padding: 17px 0 0 0;}
+header .gnb .gnb_open {display: none;} /*모바일에서만 나타남 - pc에서는 숨김*/
+header .gnb .gnb_wrap ul {display: flex;}
+header .gnb .gnb_wrap ul li a{padding: 40px 39px 36px 39px; font-size: 20px; display: block; position: relative; /*after 정렬의 기준*/}
+header .gnb .gnb_wrap ul li a::after {position: absolute; right: 0; top: 46px; content: ""; /*after를 보이게 하는 값*/
+    width: 6px; height: 6px; border-radius: 50%; background-color: rgba(255,255,255,0.5);}
+header .gnb .gnb_wrap ul li:last-child a::after {display: none;}
+@media screen and (max-width:640px){
+        header {height: 387px; border-radius: 0;}
+        header .wrapper {display: flex; justify-content: space-between;}
+        header .logo {padding: 11px 0 0 0;}
+        header .logo img {width: 70px;}
+            /*이미지 태그로 코딩한 요소는 사이즈가 변경되면
+            반드시 css에서 img 태그를 불러서 스타일을 줘야함
+            감싸는 요소에 줘도 적용안됨
+            넓이를 조절하면 높이는 알아서 조절됨 */
+        header .gnb .gnb_open /*이미header에 position값이 존재함-header를 기준으로 정렬*/
+            {display: block; position: absolute; right: 0; top: 0; width: 60px; height: 50px; font-size: 0; line-height: 0;} /*글자숨기기*/
+        header .gnb .gnb_wrap {display: none;} /*메뉴는 열기 버튼을 클릭했을 때만 나옴*/
+}
+
+.visual {background: url(../images/visual_bg.png) no-repeat center center / cover; color: #fff; height: 900px; text-align: right;}
+.visual strong {padding: 360px 0 10px 0; display: block;}
+.visual h2 {font-size: 50px;}
+@media screen and (max-width:640px){
+        .visual {height: auto; padding: 170px 0;}
+        .visual strong {display: none;}
+        .visual h2 {font-size: 20px; font-weight: 700;}
+}
+
+.biz {margin: 149px 0 0 0;}
+.biz .wrapper {display: flex;  justify-content: space-between; /*--flex로 정렬하면 좌우요소의 길이가 같아짐*/
+    align-items: flex-start; /*--구현을 위해서 존재하는 만큼만 길이가 잡혀야함*/}
+.biz .subject {position: sticky; top: 30px;}
+    /*나를 감싸는 요소의 길이 내부에서 스크롤되는 동안 상단에 고정
+      - 감싸는 요소가 모두 스크롤되면 따라서 스크롤됨 대부분 top만 줌
+        고정될 때 상단의 여백이 됨  
+        단점 : 감싸는 요소중에서 절대 overflow:hidden;을 주면 안됨*/
+.biz .subject strong {color: #004289; font-size: 20px;}
+.biz .subject h2 {color: #2d2d2d; font-size: 45px; margin: 5px 0 0 0;}
+.biz .list {width: 832px;}
+.biz .list ul {display: flex; flex-wrap: wrap; /*2줄 허용*/ gap: 24px;}
+.biz .list ul li {width: 404px; border-radius: 50px; overflow: hidden; /*넘치는 요소 삭제*/}
+.biz .list ul li a {height: 300px; display: block; position: relative; color: #fff;} /*h3 정렬의 기분*/
+.biz .list ul li a .photo::before {display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; 
+    background-color:rgba(255,255,255,0.75); content: "";}
+.biz .list ul li a:hover .photo::before {display: block;}
+.biz .list ul li a h3 {position: absolute; left:0; top: 133px; width: 100%; text-align: center; font-size: 35px;} /*a를 기준으로 정렬*/
+.biz .list ul li a:hover h3 {color: #004289;}
+.biz .list ul li a .more {position: absolute; left: 0; top:180px; bottom: 80px; width: 100%; text-align: center; color: #004289; display: none;}
+.biz .list ul li a:hover .more {display: block;}
+.biz .list ul li:nth-child(odd)/*홀수*/ {transform: translate(0, 83px);}
+    /*transform은 현재으이 위치에서부터 요소를 움직이는데 살짝 absolute처럼 다른요소와 부딪치더라도 배치할 수 있음
+    margin은 다른 요소와 중복되면 밀리는 현상이 발생하는데 transform: translate로 움직이는 것은 공간을 차지하지 않음
+    기본적으로 모든 여백은 margin이고 margin으로 안되는 경우 transform: translate를 사용*/
+@media screen and (max-width:640px){
+        .biz {margin: 41px 0 0 0;}
+        .biz .wrapper {display: block;}
+        .biz .subject {position: relative;  /* sticky를 해제하기 위해서*/  margin: 0px 0 13px 0;}
+        .biz .subject h2 {font-size: 20px; margin: 0; font-weight: 700; color: #2d2d2d;}
+        .biz .subject h2 br {display: none;}
+        .biz .subject strong {font-size: 13px; font-weight: 500;}
+        .biz .list {width: auto; /* 넓이 고정값 해제 */}
+        .biz .list ul {gap: 16px; margin-top: 50px;}
+        .biz .list ul li {/* width: calc(50% - 8px); */ width: calc(50% - 8px); color: #3D3D3D; border-radius: 0; overflow: visible;}
+            /* overflow 해제 - 길이만큼 늘어나게 모바일에서 사이즈가 줄어들면 제목이 2줄이 될 수도 있음 */
+        .biz .list ul li:nth-child(odd) {transform: translate(0, 0);}
+        .biz .list ul li a {height: auto; /* 제목이 여러줄이 될 수도 있음 */ text-align: left;}
+        .biz .list ul li a:hover .photo::before {display: none;}
+        .biz .list ul li a .photo {height: 152px; overflow: hidden; border-radius: 20px;}
+        .biz .list ul li a .photo img {width: 100%; height: 100%; object-fit: cover;}
+            /* pc와 mobile에서 이미지의 비율이 다르게 보일때 img태그로 코딩한 이미지를 
+                정해진 영역에 맞게 사이즈를 리사이즈해주는 코딩 */
+        .biz .list ul li a h3 {position: relative; /* absolute 해제 */
+            left: auto; top: auto; font-size: 13px; font-weight: 500; margin: 5px 0 0 0; color: #2d2d2d;}
+        .biz .list ul li a:hover h3 {bottom: auto;}
+        .biz .list ul li a:hover p {display: none;}
+        .biz .list ul li a:hover .more {display: none;}
+}
+
+.news {background-color: #F2FAFE; margin: 221px 0 0 0; padding: 154px 0 172px 0;}
+.news .subject strong {font-size: 20px; color: #004289;}
+.news .subject h2 {font-size: 45px; color: #2d2d2d; margin: 5px 0 38px 0;}
+.news .list ul {display: flex; justify-content: space-between;}
+.news .list ul li {width: 404px; }
+.news .list ul li a h3 {color:#2d2d2d; font-size: 20px; margin: 25px 0 20px 0;
+                    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} /*무조건 1줄로*/
+    /*제목을 무조건 2줄로 주고싶은 경우: line-height, height(행간X줄수/단위em), overflow:hidden을 준다*/
+.news .list ul li a {border-top: 1px solid #3d3d3d; display: block;}
+.news .list ul li a p {line-height: 1.4; height: 4.2em; overflow: hidden;}
+.news .list ul li a:hover {color: #004289; border-color: #004289;}
+.news .list ul li a:hover h3 {color: #004289;}
+.news .list ul li a:hover .date {color: #004289;}
+.news .list ul li a .date {color: #666666; display: block; margin: 35px 0 0 0;}
+.news .wrapper {position: relative;}
+.news .more {position: absolute; right: 0; top: 55px; color: #004289;}
+.news .more a {padding: 11px 46px 10px 28px; border-radius: 50px; position: relative;}
+.news .more a::after {position: absolute; right: 20px; top: 9px; width: 19px; height: 19px; content: "";
+                    background: url(../images/news_more.svg) no-repeat center center / contain;} 
+                    /*more를 기준으로 정렬*/
+.news .more a:hover {background-color: #004289; color: #fff;}
+.news .more a:hover::after {background-image: url(../images/news_more_w.svg);}
+@media screen and (max-width:640px){
+        .news {background-color: #f7f7f7; margin: 60px 0 0 0; padding: 60px 0;}
+        .news .subject strong {font-size: 13px; font-weight: 500;}
+        .news .subject h2 {font-size: 20px; font-weight: 700; margin: 0 0 30px 0;}
+        .news .list ul {display: block;}
+        .news .list ul li {width: 100%;}
+        .news .list ul li a h3 {color:#2d2d2d; font-size: 13px; overflow: hidden; width: calc(100%-80px); margin: 0;
+                text-overflow: ellipsis; white-space: wrap;}
+        .news .list ul li a {border-top: 1px solid #3d3d3d; display: flex; justify-content: space-between; padding: 22px 0 13px 0;}
+        .news .list ul li:last-child a {border-bottom: 1px solid #666666;}
+        .news .list ul li a p {display:none;}
+        .news .list ul li a .date {color: #666666; display: block; margin: 0px 0 5px 0;}
+        .news .wrapper {position: relative;}
+        .news .more {position: absolute; right: 0; top: 24px; color: #004289; font-size: 12px; }
+        .news .more a {padding: 6px 31px 5px 12px; border-radius: 50px; position: relative; border: 1px solid #004289; border-radius: 20px;}
+        .news .more a::after {position: absolute; right: 10px; top: 5px; width: 15px; height: 15px; content: "";
+                            background: url(../images/news_more.svg) no-repeat center center / contain;} 
+}
+
+.wepzine .subject strong {font-size: 20px; color: #004289; margin: 175px 0 0 0; display: block;}
+.wepzine .subject h2 {font-size: 45px; color: #2d2d2d; margin: 5px 0 38px 0;}
+.wepzine .list ul {display: flex; justify-content: space-between;}
+.wepzine .list ul li {width: 404px; height: 407px;}
+.wepzine .list ul li a {display: block; background-color: #f4f4f4; padding: 0 0 25px 0; }
+
+.wepzine .list ul li a .photo {overflow: hidden; height: 276px;}
+.wepzine .list ul li a .photo img {width: 100%; height: 100%; object-fit: cover; transition: 0.5s;}
+    /*이미지를 가져오는 경우 디자인대로 리사이즈하는 방법
+     1.이미지를 감싸는 요소가 넓이와 높이를 가지고 있어야함.(overflow:hidden;)
+     2.이미지에는 width:100%, height:100%, object-fit:cover를 줘야함*/
+
+.wepzine .list ul li a strong {color: #004289; display: block; margin: 25px 25px 5px 25px;}
+.wepzine .list ul li a h3 {font-size: 23px; color: #2d2d2d; margin: 0 25px;}
+.wepzine .list ul li a:hover .photo img {transform: scale3d(1.2,1.2,1);} /*a에 마우스를 오버하면 이미지 확대*/
+    /* .wepzine .list ul li a .photo img {transition: 0.5s;} -- 부드럽게 적용 */
+.wepzine .list ul li a:hover {background-color: #004289; color: #fff; box-shadow: 4px 4px 4px #9C9C9C;}
+.wepzine .list ul li a:hover strong {color: #fff;}
+.wepzine .list ul li a:hover h3 {color: #fff; font-weight: 800;} 
+.wepzine .wrapper {position: relative;} /*more의 정렬 기준*/
+.wepzine .more {position: absolute; right: 0; top: 55px;/*wrapper를 기준으로 정렬*/}
+.wepzine .more a {display: block; color: #004289; padding: 9px 41px 7px 24px; position: relative;}
+.wepzine .more a::after {position: absolute;/*a를 기준으로 정렬*/ 
+        right: 18px; top: 8px; width: 19px; height: 19px; content: "";
+        background: url(../images/news_more.svg) no-repeat center center / contain;}
+.wepzine .more a:hover {background-color: #004289; color: #fff; border-radius: 20px;}
+.wepzine .more a:hover::after {background-image: url(../images/news_more_w.svg);}
+@media screen and (max-width:640px){
+        .wepzine .subject strong {font-size: 13px; font-weight: 500; margin: 50px 0 0 0;}
+        .wepzine .subject h2 {font-size: 20px; font-weight: 700; margin: 0 0 20px 0;}
+        .wepzine .list ul {flex-direction: column}
+        .wepzine .list ul li {width: auto; height: auto;}
+        .wepzine .list ul li:nth-child(3) {display: none;}
+        .wepzine .list ul li a {background-color: transparent; padding: 0;}
+        .wepzine .list ul li a .photo {overflow: hidden; height: 216px;}
+        .wepzine .list ul li a strong {font-size: 12px; margin: 3px 0;}
+        .wepzine .list ul li a h3 {font-size: 15px; margin: 0; font-weight: 700;
+                            line-height: 1.3; height: 2.6em; overflow: hidden;} /*무조건 2줄*/
+        .wepzine .list ul li a:hover .photo img {transform: none;}
+        .wepzine .list ul li a:hover {background-color: transparent; color: #2d2d2d; box-shadow: none;}
+        .wepzine .list ul li a:hover strong {color: #004289;}
+        .wepzine .list ul li a:hover h3 {color: #2d2d2d;} 
+        .wepzine .wrapper {position: relative;} 
+        .wepzine .more {position: absolute; right: 0; top: 10px;}
+        .wepzine .more a {display: block; color: #004289; padding: 6px 31px 5px 15px; position: relative; font-size: 12px; border: 1px solid #004289; border-radius: 20px;}
+        .wepzine .more a::after {position: absolute;
+                right: 13px; top: 5px; width: 15px; height: 15px; content: "";}
+        .wepzine .more a:hover {background-color: transparent; color: #004289;}
+        .wepzine .more a:hover::after {background-image: url(../images/news_more.svg);}
+}
+
+.introduce {background-color: #f7f7f7; padding: 120px 0 143px 0; margin-top: 184px;}
+.introduce .subject strong {font-size: 20px; color: #004289; text-align: center; display: block;}
+.introduce .subject h2 {font-size: 45px; color: #2d2d2d; text-align: center; margin-bottom: 50px;}
+.introduce .list ul {display: flex; justify-content: center;}
+.introduce .list ul li {width: 618px;}
+.introduce .list ul li a {display: block; color: #fff;  height: 215px; font-size: 35px; position: relative;}
+.introduce .list ul li.intro1 {background: url(../images/introduce1.png) no-repeat center center /cover;}
+.introduce .list ul li.intro2 {background: url(../images/introduce2.png) no-repeat center center /cover;}
+.introduce .list ul li.intro1 a {padding: 92px 0 0 99px;}
+.introduce .list ul li.intro2 a {padding: 92px 0 0 65px;}
+.introduce .list ul li.intro1 a::after {position: absolute; background: url(../images/news_more_w.svg) no-repeat center center / contain; right: 54px; top: 46px; height: 123px; width: 123px; content: "";}
+.introduce .list ul li.intro2 a::after {position: absolute; background: url(../images/news_more_w.svg) no-repeat center center / contain; right: 46px; top: 46px; height: 123px; width: 123px; content: "";}
+.introduce .list ul li a:hover {background-color: rgba(0,0,0,0.8);}
+@media screen and (max-width:640px){
+        .introduce {padding: 60px 0 75px 0; margin-top: 66px;}
+        .introduce .subject strong {font-size: 13px; font-weight: 500; text-align: left;}
+        .introduce .subject h2 {font-size: 20px; font-weight: 700; margin: 0 0 20px 0; text-align: left;}
+        .introduce .list ul li {width: 50%;}
+        .introduce .list ul li a {height: 70px; font-size: 13px;text-align: center;}
+        .introduce .list ul li.intro1 a, .introduce .list ul li.intro2 a {padding: 30px 0 0 0;}
+        .introduce .list ul li.intro1 a::after, .introduce .list ul li.intro2 a::after {display: none;}
+        .introduce .list ul li a:hover {background-color: transparent;}
+}
+
+footer {background-color: #666; padding: 55px 0 90px 0; color: rgba(255,255,255,0.8);}
+footer .wrapper {position: relative;}
+footer .top {position: absolute; right: 0; top: 0;}
+footer .top button {border: 1px solid #fff; width: 103px; height: 31px; border-radius: 50px; padding: 4px 30px 0 0; position: relative;}
+footer .top button::after {background: url(../images/top.svg) no-repeat center center / contain; position: absolute; right: 9px; top: 0; content: ""; height: 29px; width: 29px;}
+footer .f_nav ul {display: flex; gap: 40px;}
+footer .f_nav ul li {position: relative;}
+footer .f_nav ul li::after {position: absolute; right: -20px; top: 4px; height: 12px; width: 1px; background-color: rgba(255,255,255,0.2); content: "";}
+footer .f_nav ul li:last-child::after {display: none;}
+footer .f_info {margin: 40px 0 10px 0; display: flex; gap: 40px;}
+footer .copyright {color: rgba(255,255,255,0.6);}
+@media screen and (max-width:640px){
+        footer {padding: 21px 0 50px 0;}
+        footer .top {position: relative; right: auto; top: auto; text-align: right;}
+        footer .top button {width: 69px; height: 25px; border-radius: 50px; padding: 1px 11px 0 0; position: relative;}
+        footer .top button::after {right: 5px; top: -2px;}
+        footer .f_nav ul {flex-wrap: wrap;/*여러줄허용*/ gap: 0;}
+        footer .f_nav ul li {position: relative; margin: 15px 20px 7px 0;}
+        footer .f_nav ul li::after {position: absolute; right: -10px; top: 2px; height: 10px; width: 1px; background-color: rgba(255,255,255,0.2); content: "";}
+        footer .f_nav ul li:last-child::after {display: none;}
+        footer .f_info {margin: 30px 0 10px 0; display: flex; gap: 0; flex-wrap: wrap;}
+        footer .f_info address, footer .f_info span {margin: 0 20px 7px 0;}
+}
