@@ -1,0 +1,81 @@
+@import url(default.css);  /*default.css.불러오기*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+html, body {
+    font-family: "Pretendard", sans-serif; /*sans-serif : 고딕체라는 의미*/
+    font-size: 16px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.4;
+    word-break: keep-all; 
+}
+.wrapper { /*홈페이지 넓이 제한, 가운데정렬*/
+    width: 1260px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.1;
+    margin: 150px 0 55px 0;
+    text-align: center; /*글자 가운데 정렬*/
+}
+.only {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center; /*글자 가운데 정렬*/
+    height: 600px;
+    
+    background-position: center center; /*배경정렬*/
+    background-repeat: no-repeat; /*반복 안함*/
+    background-size: cover; /*영역에 꽉차게*/
+
+    background: url(../images/only_bg.png) no-repeat center center / cover;
+    /*배경에 이미지를 넣을 때 한번에 선언하는 방법*/
+}
+.only h2 {
+    font-size: 50px;
+    line-height: 1.1;
+    padding: 230px 0 20px 0;
+    color: #fff;
+}
+.cj .wrapper {
+    display: flex;
+    justify-content: space-between
+}
+.culture {
+    margin: 55px 0 100px 0;
+}
+.cj .txt {
+    width: 535px;
+}
+.cj .txt strong {
+    font-size: 40px;
+    color: #006ecd;
+}
+.cj .txt h2 {
+    font-size: 40px;
+    color: #1d1d1d;
+    line-height: 1.1;
+    margin: 20px 0 15px 0;
+}
+.cj .photo img {
+    border-radius: 20px; /*모서리 둥근 값*/
+}
+.culture .txt {
+    margin-top: 140px;
+}
+.global .txt {
+    margin-top: 120px;
+}
