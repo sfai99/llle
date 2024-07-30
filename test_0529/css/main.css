@@ -1,0 +1,81 @@
+@import url(default.css);  /* default.css.불러오기*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+html, body {
+    font-family: "Pretendard", sans-serif; /* sans-serif : 고딕체라는 의미 */
+    font-size: 15px;
+    color: #3d3d3d;
+    line-height: 1.4;
+    font-weight: 400;
+    word-break: keep-all;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+.asset h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.1;
+    margin: 215px 0 8px 0;
+}
+.asset ul {
+
+}
+.asset ul li {
+    width: 404px;
+    height: 210px;
+    background-color: #f4f4f4;
+    border-radius: 20px;  /* 모서리 둥근값 - 하나 입력 : 전체 적용 */
+    padding: 75px 0 0 55px;
+    float: left;
+    margin: 50px 24px 0 0;
+}
+.asset ul li:last-child {
+    margin-right: 0;
+}
+.asset ul li p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 3px 0 0px 0;
+    line-height: 1;
+}
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
+.core {
+    margin: 160px 0 100px 0;
+}
+.core .photo {
+    float: left;
+}
+.core .photo img {
+    border-radius: 20px;
+}
+.core .txt {
+    float: left;
+    margin: 95px 0 0 110px;
+}
+.core .txt h1 {
+    font-weight: 700;
+    color: #376ebb;
+    line-height: 0.8;
+}
+.core .txt p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.1;
+}
