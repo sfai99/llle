@@ -2,3 +2,27 @@
 .skip_nav {position: absolute; left: 0; top: -100px;/*focus가 될때만 나타나야함*/ width: 100%; height: 0; z-index: 9999999999999;}
 .skip_nav a {position: absolute; left: 0; bottom: 0; width: 100%; height: 50px; background-color: #111; color: #fff; text-align: center; line-height: 50px;}
 .skip_nav a:focus {top: 100px;}
+
+header {position: relative; z-index: 100;/*z-index를 적용시키려면 position이 있어야함*/}
+@media screen and (min-width:1025px){ /*1025px 이상 - pc버전*/
+    header .header_top {height: 94px; display: flex; justify-content: space-between;}
+    header .header_top .tnb ul {display: flex;}
+    header .header_top .tnb ul li a {position: relative; display: block; padding: 1.56rem 2.06rem; font-size: 0.94rem; color: var(--txt-color-gray);}
+    header .header_top .tnb ul li a::after {position: absolute; top: 30px; right: 0; width: 1px; height: 12px; background-color: #ccc; content: "";}
+    header .header_top .tnb ul li:last-child a::after {display: none;}
+    header .header_top .tnb ul li:first-child a {margin-left: 47px;}
+    header .header_top .tnb ul li:last-child a {margin-right: 30px;}
+    header .header_top .tnb ul li a:hover {text-decoration: underline;}
+    header .header_sub {height: 56px; position: relative;/*logo정렬의 기준*/}
+    header .header_sub .logo {position: absolute; left: 50%; transform: translate(-50%, 0);/*가운데*/ top: -73px;}
+    header .header_sub .logo a {display: block; width: 90px; height: 64px; font-size: 0; line-height: 0; position: relative;}
+    header .header_sub .logo a::before {position: absolute; left: 0; top: 0; width: 100%; height: 100%; content: ""; background: url(../images/common/logo.svg) no-repeat center center / contain;}
+    header .header_sub .gnb ul.depth01 {display: flex;}
+    header .header_sub .gnb ul.depth01 > li {width: 20%; text-align: center; position: relative;/*depth02 정렬의 기준*/}
+    header .header_sub .gnb ul.depth01 > li > a {line-height: 56px; width: 100%; font-size: 1.25rem; color: var(--txt-color-tit); font-weight: 600;} 
+    header .header_sub .gnb ul.depth02 {position: absolute;/*header밖에 존재하는 요소*/ left: 0; top: 56px; width: 100%; display: none;}
+}/*media*/
+@media screen and (max-width:1024px){ /*1024px 이gk - 모바일버전*/
+    header .header_top {display: none;}
+    header .header_sub .gnb {display: none;}
+}
