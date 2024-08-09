@@ -4,6 +4,10 @@
 .skip_nav a:focus {top: 100px;}
 
 header {position: relative; z-index: 100;/*z-index를 적용시키려면 position이 있어야함*/}
+header .header_sub .logo {position: absolute; left: 50%; transform: translate(-50%, 0);/*가운데*/ top: -73px;}
+header .header_sub .logo a {display: block; width: 90px; height: 64px; font-size: 0; line-height: 0; position: relative;}
+header .header_sub .logo a::before {position: absolute; left: 0; top: 0; width: 100%; height: 100%; content: ""; background: url(../images/common/logo.svg) no-repeat center center / contain;}
+
 @media screen and (min-width:1025px){ /*1025px 이상 - pc버전*/
     header .header_top {height: 94px; display: flex; justify-content: space-between;}
     header .header_top .tnb ul {display: flex;}
@@ -14,15 +18,36 @@ header {position: relative; z-index: 100;/*z-index를 적용시키려면 positio
     header .header_top .tnb ul li:last-child a {margin-right: 30px;}
     header .header_top .tnb ul li a:hover {text-decoration: underline;}
     header .header_sub {height: 56px; position: relative;/*logo정렬의 기준*/}
-    header .header_sub .logo {position: absolute; left: 50%; transform: translate(-50%, 0);/*가운데*/ top: -73px;}
-    header .header_sub .logo a {display: block; width: 90px; height: 64px; font-size: 0; line-height: 0; position: relative;}
-    header .header_sub .logo a::before {position: absolute; left: 0; top: 0; width: 100%; height: 100%; content: ""; background: url(../images/common/logo.svg) no-repeat center center / contain;}
-    header .header_sub .gnb ul.depth01 {display: flex;}
-    header .header_sub .gnb ul.depth01 > li {width: 20%; text-align: center; position: relative;/*depth02 정렬의 기준*/}
-    header .header_sub .gnb ul.depth01 > li > a {line-height: 56px; width: 100%; font-size: 1.25rem; color: var(--txt-color-tit); font-weight: 600;} 
-    header .header_sub .gnb ul.depth02 {position: absolute;/*header밖에 존재하는 요소*/ left: 0; top: 56px; width: 100%; display: none;}
+    header .header_sub .gnb .gnb_open, header .header_sub .gnb .gnb_close {display: none;}/*숨김*/
+    header .header_sub .gnb .gnb_wrap ul.depth01 {display: flex;}
+    header .header_sub .gnb .gnb_wrap ul.depth01 > li {width: 20%; text-align: center; position: relative;/*depth02 정렬의 기준*/}
+    header .header_sub .gnb .gnb_wrap ul.depth01 > li > a {line-height: 56px; width: 100%; font-size: 1.25rem; color: var(--txt-color-tit); font-weight: 600; white-space: nowrap;/*한줄로*/} 
+    header .header_sub .gnb .gnb_wrap ul.depth01 > li.over > a {color: var(--color-main);}
+    header .header_sub .gnb .gnb_wrap ul.depth01 > li.over > a > span {position: relative;/*after 정렬의 기준*/}
+    header .header_sub .gnb .gnb_wrap ul.depth01 > li.over > a > span::after {position: absolute; left: -5px; bottom: -16px; width: calc(100% + 10px); height: 3px; background-color: var(--color-main); content: "";}
+    header .header_sub .gnb .gnb_wrap ul.depth02 {display: none;}
+    header .header_sub .gnb .gnb_wrap ul.depth02 {position: absolute;/*header밖에 존재하는 요소*/ left: 0; top: 56px; width: 100%; display: none; padding: 15px 0;}
+    header .header_sub .gnb .gnb_wrap ul.depth02 > li > a {display: block; margin: 20px 0; white-space: nowrap;/*한줄로*/} 
+    header .header_sub .gnb .gnb_wrap ul.depth02 > li > a:hover {color: var(--color-main); font-weight: 600; letter-spacing: -0.3px;}
+    header.menu_over .header_sub .gnb .gnb_wrap ul.depth02 {display: block;}
+    header.menu_over::before {position: absolute;/*header를 기준으로*/ left: 0; top: 150px; width: 100%; height: 303px; content: ""; background-color: #fff; border-top: 1px solid #ededed;}
+
 }/*media*/
-@media screen and (max-width:1024px){ /*1024px 이gk - 모바일버전*/
+@media screen and (max-width:1024px){ /*1024px 이하 - 모바일버전*/
+    header {height: 50px;}
     header .header_top {display: none;}
-    header .header_sub .gnb {display: none;}
+    header .header_sub .gnb .gnb_wrap {display: none;}
+    header .header_sub .logo {left: 50%; top: -73px;}
+    header .header_sub .logo a::before {top: 83px; width: 100%; height: 50%;}
+    header .header_sub .gnb_open, header .header_sub .gnb_close {position: absolute; right: 0; top: 0; width: 60px; height: 100%; font-size: 0; line-height: 0;}
+    header .header_sub .gnb_open::before, header .header_sub .gnb_close::before {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background-position: center center; background-repeat: no-repeat; background-size: contain; content: "";}
+    header .header_sub .gnb_open::before {width: 24px; height: 24px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232d2d2d'%3E%3Cpath d='M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z'/%3E%3C/svg%3E");}
+    header .header_sub .gnb_close::before {width: 24px; height: 24px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%232d2d2d'%3E%3Cpath d='M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z'/%3E%3C/svg%3E");}
+    header .header_sub .gnb_close {display: none;}
+
+    /*메뉴고정*/
+    header.fiexd {position: fixed; left: 0; top: 0; width: 100%; background-color: #fff;}
+    header.fiexd + .container  {margin-top: 50px;}
 }
+
+footer {height: 500px;}
