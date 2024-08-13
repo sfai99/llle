@@ -44,8 +44,9 @@ a:focus, button:focus {outline: 3px dashed #ccc;}
     --txt-color-gray : #666;
     --txt-color-white : #fff;
     --txt-size-tit : 10rem;
+    --padding-section : 130px 0;
 }
-@media screen and (max-width:1300px) {:root {--txt-size-tit : 8rem;}}
-@media screen and (max-width:1024px) {:root {--txt-size-tit : 6.5rem;}}
-@media screen and (max-width:768px) {:root {--txt-size-tit : 5rem;}}
-@media screen and (max-width:640px) {:root {--txt-size-tit : 3.85rem;}}
+@media screen and (max-width:1300px) {:root {--txt-size-tit : 8rem;} :root {--padding-section : 120px 0;}}
+@media screen and (max-width:1024px) {:root {--txt-size-tit : 6.5rem;} :root {--padding-section : 100px 0;}}
+@media screen and (max-width:768px) {:root {--txt-size-tit : 5rem;} :root {--padding-section : 70px 0;}}
+@media screen and (max-width:640px) {:root {--txt-size-tit : 3.85rem;} :root {--padding-section : 50px 0;}}

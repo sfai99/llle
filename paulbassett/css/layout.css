@@ -328,6 +328,5 @@ header .header_sub .logo a::before {
     header.menu_open .header_sub .gnb .gnb_close {display: block;}
 }/* media */
 
-footer {
-    margin-top: 1000px;
+footer {height: 50px;
 }
