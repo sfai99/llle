@@ -110,7 +110,7 @@
     .md .tit {margin: 0 0 15px 0;}
 }
 
-.event {padding: var(--padding-section); background-color: #ededed;}
+.event {padding: var(--padding-section); background-color: #f7f7f7;}
 .event .tit {text-align: center; margin: 0 0 60px 0;}
 .event .tit h2 {color: var(--txt-color-tit); font-family: 'prettynight'; font-size: var(--txt-size-tit); line-height: 0.85;}
 .event .list .popup .popup_item {margin: 0 10px; text-align: center;}
