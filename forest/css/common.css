@@ -1,51 +1,81 @@
-
-/* 글자의 스타일은 상속받음. 기본글자의 스타일은 
-모든 태그를 감싸는 html body에 선언 
-폰트를 여러개를 선언... 첫번째 폰트를 1순위로 적용.. 만약 지원이 안되면 2순위 폰트를 적용
-영문만 지원하는 폰트를 1순위로 쓰고 2순위로 한글이 지원되는 서체를 선언
-영문,순자,특수문자는 영문 폰트가 적용, 나머지 한글은 한글 폰트 적용
-*/
 html, body {
-    font-family: 'NanumSquareNeo', "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif;
+    font-family: "NanumSquareNeo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0; /* 자간 */
-    line-height: 1.4;
-    color: #2d2d2d;
+    line-height: 1.4; /* 배수 - 글자크기에 1.4배 */
+    color: #2d2d2d; /* 글자 색상 */
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 강제로 줄바꿈 실행 */
 }
-#wrap {min-width: 1260px; overflow: hidden;} /* 홈페이지 전체를 감싸는 요소 - 가로스크롤바가 생겼을때 배경이 짤리는 현상을 막음 */
-.wrapper { width: 1260px; /* 홈페이지의 넓이를 제한 */ margin: 0 auto; /* 가운데정렬 */}
+#wrap {
+    min-width: 1260px;
+    overflow: hidden;
+}
+/* 홈페이지의 넓이를 제한하고 가운데정렬 */
+.wrapper {
+    width: 1260px; 
+    margin: 0 auto; /* 가운데정렬 */
+}
+@media screen and (max-width:1520px){/*좌우에 퀵메뉴만큼 여백 추가*/
+    .wrapper {
+        width: auto;
+        margin: 0 130px;
+    }
+}
+@media screen and (max-width:1300px){
+    html, body {
+        font-size: 16px;
+    }
+    #wrap {
+        min-width: 100%;
+    }
+}/* media */
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 14px;
+    }
+}/* media */
+@media screen and (max-width:500px){
+    html, body {
+        font-size: 13px;
+    }
+}/* media */
 
-/* 1260px 나의 wrapper의 넓이에 좌우 여백 20px씩 추가한 사이즈부터 반응형 */
-@media screen and (max-width:1300px){#wrap {min-width: 100%;} .wrapper {width: auto; margin: 0 20px;}}
-@media screen and (max-width:1024px){html, body {font-size: 15px;}}
-@media screen and (max-width:768px){html, body {font-size: 14px;}}
-@media screen and (max-width:640px){html, body {font-size: 13px;}}
-
-/*클릭하는 요소 a, button - focus가 되었을 때 스타일 변경*/
-a:focus, button:focus {outline: 3px dashed #ccc;}
-
-::selection {background-color: #798B5E; color: #fff;} /*드래그 했을 때*/
-
-/* px -> rem
-16px ---- 1rem (기본)
-160px --- 10rem
-50px ---- 3.13rem
-25px ---- 1.56rem
-20px ---- 1.25rem
-15px ---- 0.94rem
-*/
+::selection {
+    background-color: #02CBB9;
+    color: #014D8B;
+}
 
 :root {
-    --color-main-g : #798B5E;
-    --color-main-b : #66A9C3;
-    --txt-color-tit : #1d1d1d;
-    --txt-color-gray : #3d3d3d;
+    --color-main1 : #014D8B;
+    --color-main2 : #02CBB9;
+    --txt-color-gray : #666;
     --txt-color-white : #fff;
+    --txt-color-w80 : rgba(255,255,255,0.8);
+    --txt-color-w60 : rgba(255,255,255,0.6);
+    --tit-txt-size : 55px;
+    --tit-lineheight : 1.1;
+    --tit-txt-color : #1d1d1d;
 }
-@media screen and (max-width:1300px) {}
-@media screen and (max-width:1024px) {}
-@media screen and (max-width:768px) {}
-@media screen and (max-width:640px) {}
+
+@media screen and (max-width:1300px){
+    :root {
+        
+    }
+}
+@media screen and (max-width:1024px){
+    :root {
+        
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        
+    }
+}

@@ -1,12 +1,17 @@
 $(document).ready(function(){
-    /* 
-        1024이하는 mobile
-        
-        1025이상은 pc [header .header_sub .gnb .gnb_wrap ul.depth01 > li]
-         - 메뉴에 마우스를 오버하면 1. header에 menu_over 클래스 추가 / 2. 1차 메뉴 li에 over 클래스 추가
-        
-        브라우저의 스크롤을 조금만 내리면 header에 fixed 클래스 추가 / 다시 맨 위로 이동하면 fixed 클래스 삭제
+    /*
+        현재 pc모드인지 mobile 모드인지..
+        1024 이하는 mobile 1025이상는 pc이고
+
+        header .header_sub .gnb .gnb_wrap ul.depth1 > li 
+        pc모드일때 메뉴에 마우스를 오버하면 
+        1. header에 menu_over 클래스 추가
+        2. 1차 메뉴 li에 over 클래스 추가
+
+        브라우저의 스크롤을 조금만 내리면 header fixed 클래스 추가
+        다시 맨 꼭데기로 이동하면 fixed 클래스 삭제
     */
+
     let scrolling 
     let scroll_top //header 고정 시작 값
     let window_w
@@ -66,18 +71,22 @@ $(document).ready(function(){
     })
 
 
-    /* 모바일 메뉴 [header.menu_open .header_sub .gnb .gnb_wrap .depth1 > li > a]를 클릭했을 때
-        1차의 href값을 무력화 (즉, 클릭해도 해당 페이지로 이동되지 않도록)
+    /* 
+        모바일 메뉴 
+        header .header_sub .gnb .gnb_wrap .depth1 > li > a 를 클릭했을때
 
-        li에 open 클래스를 줘야함 / 열려있는 메뉴를 클릭하면 닫히고, 닫힌 메뉴를 클릭하면 열림 
-        --> 동시에 여러개의 메뉴가 열릴 수 있음 */
-
+        1차 메뉴 a의 href값을 무력화 (즉, 클릭해도 해당 페이지로 이동 되지 않도록)
+        li에 open클래스를 줘야함
+        열려있는 메뉴를 클릭하면 닫히고, 닫힌 메뉴를 클릭하면 열림 
+        (동시에 여러개의 메뉴가 열릴 수 있음)
+    */
     $('header .header_sub .gnb .gnb_wrap .depth1 > li > a').on('click', function(e){
         if(pc_mobile == 'mo'){ //모바일에서만 작동
             e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
             $(this).parent().toggleClass('open')
         }
     })
+
     $('header .header_sub .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_open')
         //하단 콘텐츠 스크롤 금지
@@ -99,8 +108,7 @@ $(document).ready(function(){
     $('.quick .top').on('click', function(){
         $('html, body').animate({
             scrollTop : 0
-        }, 400/*0.5s*/)
+        }, 500)
     })
 
-    
 })//$(document).ready
