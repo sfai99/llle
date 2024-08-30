@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script><!--swiper-->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css"><!--swiper-->
+    <script src="js/common.js"></script> 
     <script src="js/main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
     <title>사계절출판사</title>
 </head>
@@ -70,10 +72,9 @@
                                     <li><a href="#n"><span>사계절이 전하는 책 이야기</span></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#n"><span class="search">검색</span></a>
-                            </li>
                         </ul>
                     </div>
+                    <button class="search">검색</button>
                     <button class="gnb_btn">메뉴</button>
                 </nav>
             </div><!--header_sub-->
@@ -88,12 +89,12 @@
                     <div class="tabs">
                         <h3>한 학기 한 권 읽기</h3>
                         <ul class="tab_nav">
-                            <li><a href="#tab01" class="active">초등</a></li>
+                            <li><a href="#tab01" class="">초등</a></li>
                             <li><a href="#tab02">중고등</a></li>
                         </ul>
                         <div class="tab" id="tab01">
                             <ul class="sub_tab_nav">
-                                <li><a href="#sub_tab101" class="active">독서 지도안</a></li>
+                                <li><a href="#sub_tab101" class="">독서 지도안</a></li>
                                 <li><a href="#sub_tab102">활동 자료</a></li>
                             </ul>
                             <div class="sub_tab" id="sub_tab101">
@@ -200,6 +201,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="ctrl_bar"><div class="scroll"><div class="swiper-scrollbar"></div></div></div>
                             </div>
                             <div class="sub_tab" id="sub_tab102">
                                 <div class="swiper"> 
@@ -283,6 +285,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="ctrl_bar"><div class="scroll"><div class="swiper-scrollbar"></div></div></div>
                             </div>
                         </div>
                         <div class="tab" id="tab02">
@@ -291,10 +294,439 @@
                                 <li><a href="#sub_tab202">활동 자료</a></li>
                             </ul>
                             <div class="sub_tab" id="sub_tab201">
+                                <div class="swiper"> 
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_101.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>소설</span>
+                                                        <h4>마지막 히치하이커</h4>
+                                                        <strong>문이소, 남지원, 은이결, 민경하</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_102.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>인문</span>
+                                                        <h4>페미니즘 탐구 생활</h4>
+                                                        <strong>게일 피트먼</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_103.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>소설</span>
+                                                        <h4>데스타이머</h4>
+                                                        <strong>전성현</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_104.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>사회</span>
+                                                        <h4>체 게바라와 여행하는 법</h4>
+                                                        <strong>신승철, 이윤경</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_105.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>소설</span>
+                                                        <h4>데미안</h4>
+                                                        <strong>헤르만 헤세</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_106.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>인문</span>
+                                                        <h4>열일곱 살의 욕망 연습</h4>
+                                                        <strong>안광복</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_107.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>만화</span>
+                                                        <h4>울기엔 좀 애매한</h4>
+                                                        <strong>최규석</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_108.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>소설</span>
+                                                        <h4>번외</h4>
+                                                        <strong>박지리</strong>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ctrl_bar"><div class="scroll"><div class="swiper-scrollbar"></div></div></div>
                             </div>
                             <div class="sub_tab" id="sub_tab202">
+                                <div class="swiper"> 
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_201.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[활동지]</span>
+                                                        <h4>삐뚤빼뚤 가도 좋아</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_202.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[활동지]</span>
+                                                        <h4>단단한 고고학</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_203.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[워크북]</span>
+                                                        <h4>누가 뭐래도 내 길을 갈래</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_204.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[샘플북]</span>
+                                                        <h4>세계 지리 컬러링북</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_205.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[활동지]</span>
+                                                        <h4>청소년, 소설과 대화하다</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_206.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[샘플북]</span>
+                                                        <h4>한국 지리 컬러링북</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/main/tab02_207.png" alt="책표지"></div>
+                                                <div class="tit_wrap">
+                                                    <div class="tit">
+                                                        <span>[활동지]</span>
+                                                        <h4>장자, 아파트 경비원이 되다</h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ctrl_bar"><div class="scroll"><div class="swiper-scrollbar"></div></div></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="talk">
+                <div class="wrapper">
+                    <div class="tit">
+                        <div class="tit_wrap">
+                            <a href="#n">
+                                <h3>작가와의 만남</h3><span>더보기</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list01">
+                            <ul>
+                                <li class="y">
+                                    <a href="#n">
+                                        <div class="tit_sub"><strong>박우</strong><h4>당과 인민</h4></div><span>청소년, 성인</span>
+                                    </a>
+                                </li>
+                                <li class="b">
+                                    <a href="#n">
+                                        <div class="tit_sub"><strong>계승범</strong><h4>아버지의 그림자</h4></div><span>청소년, 성인</span>
+                                    </a>
+                                </li>
+                                <li class="p">
+                                    <a href="#n">
+                                        <div class="tit_sub"><strong>김선정</strong><h4>물 없는 수영장</h4></div><span>청소년</span>
+                                    </a>
+                                </li>
+                                <li class="g">
+                                    <a href="#n">
+                                        <div class="tit_sub"><strong>배현</strong><h4>알면 약이 되는 약 이야기</h4></div><span>어린이, 청소년, 성인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list02">
+                            <div class="talk_search">
+                                <form class="search-box" action="" method="get">
+                                    <p>작가와 함께하는 특별한 시간</p><h4>강연 찾아보기</h4>
+                                    <input class="search-txt" type="text" name="" placeholder="검색하기">
+                                    <button class="search-btn" type="submit">검색하기</button>
+                                </form>
+                            </div>
+                            <div class="talk_put">
+                                <ul>
+                                    <li class="b"><a href="#n"><h4>교실<br>라이브</h4><strong>신청하기</strong></a></li>
+                                    <li class="g"><a href="#n"><h4>작가와의<br>만남</h4><strong>신청하기</strong></a></li>
+                                    <li class="y"><a href="#n"><h4>나의<br>신청 현황</h4><strong>확인하기</strong></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </section>
+            <section class="display">
+                <div class="tit">
+                    <div class="tit_wrap">
+                        <a href="#n">
+                            <h3>이야기가 있는 그림 전시</h3><span>더보기</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display01.png" alt="책표지"></div>
+                            <a href="#n"><strong>두더지의 여름 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>두더지의 여름 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display02.png" alt="책표지"></div>
+                            <a href="#n"><strong>엄마 오리 아기 오리 3</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>엄마 오리 아기 오리 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>엄마 오리 아기 오리 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display03.png" alt="책표지"></div>
+                            <a href="#n"><strong>호랭떡집 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>호랭떡집 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display04.png" alt="책표지"></div>
+                            <a href="#n"><strong>백 살이 되면 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>백 살이 되면 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display05.png" alt="책표지"></div>
+                            <a href="#n"><strong>내 친구 ㅇㅅㅎ 3</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>내 친구 ㅇㅅㅎ 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>내 친구 ㅇㅅㅎ 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display06.png" alt="책표지"></div>
+                            <a href="#n"><strong>작은 버섯 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>작은 버섯 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display07.png" alt="책표지"></div>
+                            <a href="#n"><strong>고롱고롱 하우스 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>고롱고롱 하우스 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display08.png" alt="책표지"></div>
+                            <a href="#n"><strong>왜 우니? 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>왜 우니? 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display09.png" alt="책표지"></div>
+                            <a href="#n"><strong>마당20주년특별판 3</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>마당20주년특별판 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>마당20주년특별판 1</strong><span>자세히보기</span></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/display10.png" alt="책표지"></div>
+                            <a href="#n"><strong>숨바꼭질 3</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>숨바꼭질 2</strong><span>자세히보기</span></a>
+                            <a href="#n"><strong>숨바꼭질 1</strong><span>자세히보기</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="youtube">
+                <div class="wrapper">
+                    <div class="tit">
+                        <div class="tit_top">
+                            <h3>사계절 TV</h3>
+                            <a href="#n"><span class="more">더보기</span></a>
+                        </div>
+                        <div class="tit_sub"><span><span class="youtube_logo"></span>에서 다양한 도서정보와 <br class="mo_skip">작가의 이야기를 확인해보세요!</span></div>
+                    </div>
+                    <div class="list">
+                        <div class="list_wrap">
+                            <div class="swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube01.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>현직 국어 교사들이 말하는 독서와 국어 성적의 관계</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube02.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>SF를 즐기는 법 과학기술을 이해하지 못해도 괜찮아</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube03.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>『소녀들에게는 사생활이 필요해』 김여진 작가 인터뷰</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube04.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>초등학교 입학을 앞둔 어린이와 학부모에게 꼭 당부하고 싶은 것이 있다면</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube05.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>21세기에 읽는 20세기 소년의 성장소설 돼지가 한 마리도 죽지 않던 날</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube06.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>'독고독락 시리즈'_재관람 카드의 비밀 / 최상아 작가 낭독 영상</p>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/main/youtube07.png" alt="유튜브 영상 썸네일"></div>
+                                            <p>[북트레일러] 여름빛</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="btn_prev">이전 팝업보기</button>
+                        <button class="btn_next">다음 팝업보기</button>
+                    </div>
+                </div>
+            </section>
+            <section class="notice">
+                <div class="wrapper">
+                    <div class="tit">
+                        <div class="tit_wrap">
+                            <a href="#n">
+                                <h3>공지사항</h3><span>더보기</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_tit">
+                                        <strong>북토크</strong>
+                                        <p>천운영 소설가와 정상원 셰프에게 듣는 맛을 우려내는 말!</p>
+                                    </div>
+                                    <div class="date">2024-08-26</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_tit">
+                                        <strong>모집</strong>
+                                        <p>사계절 청소년 북클럽 'ㅅ [시옷]' _ <물 없는 수영장></p>
+                                    </div>
+                                    <div class="date">2024-08-23</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_tit">
+                                        <strong>대회</strong>
+                                        <p>알라딘 단독 『글자들의 수프』 리뷰 대회</p>
+                                    </div>
+                                    <div class="date">2024-08-07</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="banner">
+                        <ul>
+                            <li>
+                                <div class="banner_tit b">
+                                    <h4>사계절 북뉴스</h4>
+                                    <p>독자와 함께 성장하는 사계절 북뉴스</p>
+                                </div>
+                                <div class="more"><a href="#n"><span>구독하기</span></a></div>
+                            </li>
+                            <li>
+                                <div class="banner_tit g">
+                                    <h4>사계절 통신</h4>
+                                    <p>성장의 의미를 생각하는 사계절 통신</p>
+                                </div>
+                                <div class="more"><a href="#n"><span>구독하기</span></a></div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
