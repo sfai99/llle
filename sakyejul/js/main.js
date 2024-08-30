@@ -1,93 +1,140 @@
 $(document).ready(function(){
-  const myFullpage = new fullpage('#fullpage', {  /* html에서 페이지 전체를 감싸는 요소 */
-
-    navigation: false, /* 오른쪽에 각 페이지의 paging */
-    navigationPosition: 'left', /* 위치 */
-    navigationTooltips: ['Main', '나무심기', '숲 활동', '활동이야기'], /* 툴팁 */
-    showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
-
-    anchors: ['visual', 'tree', 'forest', 'story', 'footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
-
-    autoScrolling:true, /* 한페이지씩 스크롤 */
-    scrollHorizontally: true,
-
-    verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
     
-    scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
+  /* 브라우저 넓이가 1024이하면 모바일, 이상이면 pc */
+  let pc_mobile //현재상태가 pc인지 모바일인지를 저장
+  let window_w //브라우저 넓이 저장
 
-    afterLoad: function(origin, destination, direction, trigger){
-      if((destination.index == 1)||(destination.index == 2)||(destination.index == 3)||(destination.index == 4)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-        $('header').addClass('dark')
-        $('.fp_nav').addClass('dark')
-        $('.quick_menu').addClass('dark')
+  function resize_chk(){
+      window_w = $(window).width()
+      if(window_w > 1024){ /*1024보다 크면 -pc면 */
+          pc_mobile = 'pc'
+      }else{ /*모바일이면*/
+          pc_mobile = 'mobile'
+      }
+      console.log(pc_mobile)
+  }
+  //처음에 로딩 됐을 때 실행
+  resize_chk()
+  //브라우저가 리사이즈 될 때마다 실행
+  $(window).resize(function(){
+      resize_chk() 
+  })
+
+  /* 
+      페이지가 스크롤되면 header에 fixed 클래스를 추가
+      다시 맨 위로 올라가면 header에 fixed 클래스 삭제  */
+  
+  let scrolling
+
+  function scroll_chk(){
+      scrolling = $(window).scrollTop()
+      console.log(scrolling)
+      if(scrolling > 0){
+          $('header').addClass('fixed')
       }else{
-        $('header').removeClass('dark')
-        $('.fp_nav').removeClass('dark')
-        $('.quick_menu').removeClass('dark')
+          $('header').removeClass('fixed')
       }
-      console.log(destination.index)
-      $('.fp_nav ul li').removeClass('active')
-      $('.fp_nav ul li').eq(destination.index).addClass('active')
+  }//function
+
+  //문서가 처음 로딩되었을때 1번 실행
+  scroll_chk()
+
+  $(window).scroll(function(){
+      //브라우저를 스크롤 할때마다 실행
+      scroll_chk()
+  })//window.scroll
+
+      /*
+      메뉴에 마우스를 올리면
+      header에 menu_over라는 클래스를 추가
+      마우스를 오버한 li에먼 on이라는 클래스를 추가
+      메뉴 :header .gnb .gnb_wrap ul.depth1 > li
       
-      if((destination.index == 1)){
-        $('.tree .count span').counterUp();
+      --> 다른 메뉴(li)에 마우스를 오버하면 이전에 오버했던 메뉴의 on클래스 삭제 
+          (모든 메뉴의 on클래스를 삭제했다가 오버한 내꺼만 on클래스 추가)
+      --> header에서 마우스를 아웃하면 그때 menu_over라는 클래스 삭제
+          모든 메뉴에서 on클래스 삭제
+      */
+
+  $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+      if(pc_mobile == 'pc'){
+          $('header').addClass('menu_over')
+          $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
+          $(this).addClass('on')
       }
-    },
+      
+  })
+  $('header').on('mouseleave', function(){
+      if(pc_mobile == 'pc'){
+          $('header').removeClass('menu_over')
+          $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
+      }    
+  })
 
-    responsiveWidth: 1024 /* fullpage를 적용시키지 않을 모바일 사이즈 */
-  });//fullpage
+  $('header .gnb .gnb_open').on('click', function(){
+      if(pc_mobile == 'mobile'){
+          $('header').addClass('mobile_open')
 
-  const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+      }
+  })
+  $('header .gnb .gnb_open').on('click', function(){
+      if(pc_mobile == 'mobile'){
+          $('header').removeClass('mobile_open')
 
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: true,
-    },
+      }
+  })
 
-    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-
-    pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-      el: '.visual .paing', /* 해당 요소의 class명 */
-      clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-      renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-          return '<div class="item '+className+'"><span class="txt' + (index + 1) + '"></span></div>';
-      },
-    },
-    
-  });
-
-  const story_swiper = new Swiper('.story .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+  const book_swiper = new Swiper('.book .tab .sub_tab .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: "auto", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
+    spaceBetween: 16, /* li와 li사이 - 제일 작은 여백 */
     breakpoints: {
-      640: {    /* 640px 이상일때 적용 */
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      768: {    /* 768px 이상일때 적용 */
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1024: {   /* 1024px 이상일때 적용 */
-        slidesPerView: 5,
-        spaceBetween: 24,
-      },
-      1540: {    /* 1280px 이상일때 적용 */
-        slidesPerView: 4,
-        spaceBetween: 24,
+      640: {  /* 640px 이상이 되면 적용 */
+          spaceBetween: 24, 
       },
     },
-    centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-      el: '.swiper-pagination', /* 해당 요소의 class명 */
-      clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-      type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
-    },
+  });//book_swiper
+
+ 
+  
+  const subTabNav = $(".sub_tab_nav a"); // 서브 탭 앵커 태그
+  const tabNav = $(".tab_nav a"); // 메인 탭 앵커 태그
+  const tabNavLi = $('.tab_nav li'); // 메인 탭 리스트
+
+  // 서브 탭 클릭 이벤트 핸들러
+  subTabNav.on("click", function (e) {
+      e.preventDefault();
+      const target = $(this).attr("href");
+
+      // 해당 서브 탭 활성화
+      $(target).addClass("active").siblings('.active').removeClass("active");
+      $(this).closest('li').addClass("active").siblings().removeClass("active");
   });
 
-})//document.ready
+  // 메인 탭 클릭 이벤트 핸들러
+  tabNav.on("click", function (e) {
+      e.preventDefault();
+      const target = $(this).attr("href");
+
+      // 해당 메인 탭 활성화
+      $(target).addClass("active").siblings('.active').removeClass("active");
+      $(this).closest('li').addClass("active").siblings().removeClass("active");
+
+      // 서브 탭 유지 또는 첫 번째 서브 탭 활성화
+      const subTabActive = $(target).find('.sub_tab_nav li.active');
+      if (!subTabActive.length) {
+          $(target).find('.sub_tab_nav li:first-child a').trigger('click');
+      } else {
+          subTabActive.find('a').trigger('click');
+      }
+  });
+
+  // 페이지 로드 시 첫 번째 탭 활성화
+  const mainTabActive = tabNavLi.filter('.active');
+  if (!mainTabActive.length) {
+      tabNavLi.first().find('a').trigger('click');
+  } else {
+      mainTabActive.find('a').trigger('click');
+  }
+
+})//document
