@@ -50,7 +50,6 @@ $(document).ready(function(){
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
             $(this).addClass('on')
         }
-        
     })
     $('header').on('mouseleave', function(){
         if(pc_mobile == 'pc'){
@@ -74,10 +73,14 @@ $(document).ready(function(){
 
     //book_swiper
     const book_swiper = new Swiper('.book .tab .sub_tab .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: "auto", /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함 */
-        spaceBetween: 16, /* li와 li사이 - 제일 작은 여백 */
+        slidesPerView: "auto",
+        spaceBetween: 16,
         breakpoints: {
-        640: {  /* 640px 이상이 되면 적용 */
+        768: {
+            spaceBetween: 20, 
+        },
+        1300: {
+            slidesPerView: 4,
             spaceBetween: 24, 
         },
         },

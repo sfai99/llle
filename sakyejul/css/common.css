@@ -17,25 +17,20 @@ html, body {
     width: 1260px; 
     margin: 0 auto; /* 가운데정렬 */
 }
-@media screen and (max-width:1520px){/*좌우에 퀵메뉴만큼 여백 추가*/
+@media screen and (max-width:1300px){
     .wrapper {
         width: auto;
-        margin: 0 130px;
+        margin: 0 30px;
     }
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1200px){
     html, body {
-        font-size: 16px;
+        font-size: 15px;
     }
     #wrap {
         min-width: 100%;
     }
 }/* media */
-@media screen and (max-width:1024px){
-    html, body {
-        font-size: 15px;
-    }
-}
 @media screen and (max-width:768px){
     html, body {
         font-size: 14px;
@@ -64,8 +59,8 @@ html, body {
     --tit-fontfamily : 'jalnan';
 }
 
-@media screen and (max-width:1300px){
-    :root {
+@media screen and (max-width:1200px){
+    :root {--tit-txt-size : 45px;
         
     }
 }

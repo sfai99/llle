@@ -69,8 +69,6 @@ $(document).ready(function(){
         $('header').removeClass('menu_over')
         $('header .header_sub .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
-
-
     /* 
         모바일 메뉴 
         header .header_sub .gnb .gnb_wrap .depth1 > li > a 를 클릭했을때
