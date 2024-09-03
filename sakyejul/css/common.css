@@ -17,20 +17,18 @@ html, body {
     width: 1260px; 
     margin: 0 auto; /* 가운데정렬 */
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1400px){
     .wrapper {
-        width: auto;
-        margin: 0 30px;
+        width: 90%;
+        margin: 0 auto;
     }
-}
-@media screen and (max-width:1200px){
     html, body {
         font-size: 15px;
     }
     #wrap {
         min-width: 100%;
     }
-}/* media */
+}
 @media screen and (max-width:768px){
     html, body {
         font-size: 14px;
@@ -43,8 +41,8 @@ html, body {
 }/* media */
 
 ::selection {
-    background-color: #02CBB9;
-    color: #014D8B;
+    background-color: #64BEF3;
+    color: #fff;
 }
 
 :root {
@@ -59,18 +57,18 @@ html, body {
     --tit-fontfamily : 'jalnan';
 }
 
-@media screen and (max-width:1200px){
-    :root {--tit-txt-size : 45px;
-        
-    }
+@media screen and (max-width:1400px){
+    :root {--tit-txt-size : 47px;}
 }
-@media screen and (max-width:1024px){
-    :root {
-        
-    }
+@media screen and (max-width:1200px){
+    :root {--tit-txt-size : 45px;}
+}
+@media screen and (max-width:1000px){
+    :root {--tit-txt-size : 42px;}
 }
 @media screen and (max-width:768px){
-    :root {
-        
-    }
+    :root {--tit-txt-size : 40px;}
+}
+@media screen and (max-width:500px){
+    :root {--tit-txt-size : 32px;}
 }

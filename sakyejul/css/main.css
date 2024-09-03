@@ -17,14 +17,33 @@
     line-height: var(--tit-lineheight);
     text-shadow: 0 0 4px #81CEEA;
 }
+@media screen and (max-width:1400px){
+    .visual {height: 850px; padding-top: 280px;}
+    .visual h2 {font-size: 60px;}
+}
 @media screen and (max-width:1200px){
-    .visual {height: 800px; background-image: url(../images/main/visual_bg1200.png); padding-top: 255px;}
+    .visual {height: 800px; background: url(../images/main/visual_bg1200.png) no-repeat center center / cover; padding-top: 235px; margin-top: 0;}
     .visual h2 {font-size: 55px;}
 }
+@media screen and (max-width:768px){
+    .visual {background: url(../images/main/visual_bg768.png) no-repeat center center / cover; padding-top: 180px;}
+    .visual h2 {font-size: 50px;}
+}
 .book {
-    background: url(../images/main/book_bg.png) no-repeat center center / cover;
     padding: 210px 0 300px 0;
-    width: auto;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.book::before{
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 100%;
+    background: url(../images/main/book_bg.png) no-repeat center center / cover;
+    content: "";
 }
 .book h3 {
     color: var(--tit-txt-color);
@@ -57,13 +76,14 @@
 }
 .book .tabs .tab > ul {
     float: left;
+    width: 25%;
 }
 .book .tabs .tab > ul > li {
-    margin: 0 24px 10px 113px;
+    margin: 0 24px 10px 0;
 }
 .book .tabs .tab > ul > li > a {
     display: block;
-    font-size: 28px;
+    font-size: 26px;
     font-family: var(--tit-fontfamily);
     color: #aaa;
     padding: 17px 122px 17px 25px;
@@ -91,15 +111,12 @@
 }
 .book .tabs .tab.active, .sub_tab.active {
     display: block;
-} 
-.book .tabs .tab .sub_tab {
-    margin-left: 434px;
-    width: 1260px;
 }
 .book .tabs .tab .sub_tab ul li {
     border: 1px solid #aaa;
     border-radius: 20px;
     overflow: hidden;
+    width: calc(25% - 18px);
 }
 .book .tabs .tab .sub_tab ul li a .photo {
     overflow: hidden;
@@ -132,6 +149,9 @@
 .book .tabs .tab .sub_tab ul li a .tit strong {
     color: #666;
     font-weight: var(--txt-bold);
+    height: 1.2em;
+    line-height: 1.2;
+    overflow: hidden;
 }
 .book .tabs .tab .sub_tab ul li a .tit span {
     color: var(--color-main-y);
@@ -153,17 +173,18 @@
 }
 .book .ctrl_bar .scroll {
     position: relative;
-    width: 100%;
 }
 .book .ctrl_bar .scroll .swiper-scrollbar {
-    left: 0%;
+    position: relative;
+    left: 321px;
     bottom: -50px;
-    width: 100%;
+    width: 1260px;
     height: 15px;
     border-radius: 8px;
     background: #ededed;
 }
 .book .ctrl_bar .scroll .swiper-scrollbar .swiper-scrollbar-drag {
+    position: absolute;
     height: 7px;
     background: #007C70;
     border-radius: 10px;
@@ -171,45 +192,46 @@
     top: 0;
     cursor: pointer; /*오버할 때 마우스 포인터가 손가락 모양으로 바뀜*/
 }
+@media screen and (max-width:1400px){
+    .book {padding: 165px 0 238px 0;}
+    .book .tabs > ul {margin: 20px 0 60px 0;}
+    .book .tabs > ul > li {width: 97px;}
+    .book .tabs > ul > li > a {font-size: 22px; line-height: 46px;}
+    .book .tabs .tab > ul {float: none; display: flex; justify-content: center; width: 100%;}
+    .book .tabs .tab > ul > li {margin: 0 50px 30px 50px;}
+    .book .tabs .tab > ul > li > a {font-size: 30px; padding: 0 40px 0 0;}
+    .book .tabs .tab > ul > li.active > a {color: var(--color-main-y); background-color: transparent;}
+    .book .tabs .tab > ul > li.active > a::after {right: 0; top: 4px; width: 30px; height: 30px; background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_100_645' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_100_645)'%3E%3Cpath d='M13.5 16.5V21C13.5 21.425 13.6438 21.7813 13.9313 22.0688C14.2188 22.3563 14.575 22.5 15 22.5C15.425 22.5 15.7813 22.3563 16.0688 22.0688C16.3563 21.7813 16.5 21.425 16.5 21V16.5H21C21.425 16.5 21.7813 16.3563 22.0688 16.0688C22.3563 15.7813 22.5 15.425 22.5 15C22.5 14.575 22.3563 14.2188 22.0688 13.9313C21.7813 13.6438 21.425 13.5 21 13.5H16.5V9C16.5 8.575 16.3563 8.21875 16.0688 7.93125C15.7813 7.64375 15.425 7.5 15 7.5C14.575 7.5 14.2188 7.64375 13.9313 7.93125C13.6438 8.21875 13.5 8.575 13.5 9V13.5H9C8.575 13.5 8.21875 13.6438 7.93125 13.9313C7.64375 14.2188 7.5 14.575 7.5 15C7.5 15.425 7.64375 15.7813 7.93125 16.0688C8.21875 16.3563 8.575 16.5 9 16.5H13.5ZM15 30C12.925 30 10.975 29.6062 9.15 28.8187C7.325 28.0312 5.7375 26.9625 4.3875 25.6125C3.0375 24.2625 1.96875 22.675 1.18125 20.85C0.39375 19.025 0 17.075 0 15C0 12.925 0.39375 10.975 1.18125 9.15C1.96875 7.325 3.0375 5.7375 4.3875 4.3875C5.7375 3.0375 7.325 1.96875 9.15 1.18125C10.975 0.39375 12.925 0 15 0C17.075 0 19.025 0.39375 20.85 1.18125C22.675 1.96875 24.2625 3.0375 25.6125 4.3875C26.9625 5.7375 28.0312 7.325 28.8187 9.15C29.6062 10.975 30 12.925 30 15C30 17.075 29.6062 19.025 28.8187 20.85C28.0312 22.675 26.9625 24.2625 25.6125 25.6125C24.2625 26.9625 22.675 28.0312 20.85 28.8187C19.025 29.6062 17.075 30 15 30Z' fill='%23FFCB41'/%3E%3C/g%3E%3C/svg%3E%0A");}
+    .book .tabs .tab .sub_tab ul li {width: calc(25% - 18px); margin-left: 2px;}
+    .book .tabs .tab .sub_tab ul li a .tit h4 {font-size: 22px;}
+}
 @media screen and (max-width:1200px){
     .book {padding: 123px 0 204px 0;}
-    .book .tabs > ul {margin: 13px 0 68px 0; gap: 17px;}
-    .book .tabs > ul > li > a {font-size: 22px; line-height: 46px;}
-    .book .tabs .tab > ul > li > a {font-size: 25px; padding: 15px 108px 15px 30px;}
-    .book .tabs .tab > ul > li.active > a::after {top: 17px; width: 30px; height: 30px;}
-    .book .tabs .tab .sub_tab {margin-left: 25%;}
-    .book .tabs .tab .sub_tab ul li {width: 271px;}
-    .book .tabs .tab .sub_tab ul li a .tit h4 {font-size: 22px;}
+    .book .tabs > ul {margin: 13px 0 40px 0;}
+    .book .tabs > ul > li {width: 95px;}
+    .book .tabs > ul > li > a {line-height: 44px;}
+    .book .tabs .tab > ul > li {margin: 0 50px 25px 50px;}
+    .book .tabs .tab > ul > li > a {font-size: 28px;}
+    .book .tabs .tab .sub_tab ul li a .tit_wrap {padding: 17px 0 18px 0;}
+    .book .tabs .tab .sub_tab ul li a .tit h4 {font-size: 20px;}
     .book .tabs .tab #sub_tab102 ul li a .tit h4,
     .book .tabs .tab #sub_tab202 ul li a .tit h4 {font-size: 18px;}
-    .book .ctrl_bar .scroll {
-        position: relative;
-        width: 100%;
-        margin-right: 2%;
-    }
-    .book .ctrl_bar .scroll .swiper-scrollbar {
-        left: 0%;
-        bottom: -50px;
-        width: 100%;
-        height: 15px;
-        border-radius: 8px;
-        background: #ededed;
-    }
+}
+@media screen and (max-width:768px){
+    .book {width: 100%;}
+    .book .tabs .tab > ul > li {margin: 0 10px 25px 10px; text-align: center; line-height: 1.1;}
+    .book .tabs .tab > ul > li > a {font-size: 25px;}
+    .book .tabs .tab .sub_tab ul li a .tit_wrap {padding: 17px 0 18px 0;}
+    .book .tabs .tab .sub_tab ul li a .tit h4 {font-size: 17px;}
+    .book .tabs .tab #sub_tab102 ul li a .tit h4,
+    .book .tabs .tab #sub_tab202 ul li a .tit h4 {font-size: 18px;}
+    .book .tabs .tab > ul > li.active > a::after {right: 0; top: 0; width: 27px; height: 27px;}
+    .book .tabs .tab .sub_tab ul li {width: calc(40% - 13px);}
 }
 
 .talk {
-    background-color: #ededed;
+    background: url(../images/main/talk_bg.png) no-repeat center center / cover;
     padding: 170px 0 100px 0;
-    position: relative;
-}
-.talk::before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 15%;
-    height: 40%;
-    background: url(../images/main/talk_bg.svg) no-repeat center center / contain;
-    content: "";
 }
 .talk .tit .tit_wrap a {
     display: flex;
@@ -283,6 +305,9 @@
     font-size: 25px;
     font-weight: var(--txt-bold);
     margin-left: 15px;
+    line-height: 1;
+    height: 1em;  
+    overflow: hidden;
 }
 .talk .list .list01 ul li a span {
     color: #666;
@@ -370,6 +395,70 @@
     background-color: #3d3d3d;
     color: #fff;
 }
+@media screen and (max-width:1400px){
+    .talk {padding: 146px 0 113px 0;}
+    .talk .tit span {width: 47px; height: 47px;}
+    .talk .list .list01 ul {margin-top: 20px;}
+    .talk .list .list01 ul li {margin-bottom: 20px;}
+    .talk .list .list01 ul li a {padding: 12px 20px 12px 17px;}
+    .talk .list .list01 ul li a strong {font-size: 20px; width: 78px; line-height: 46px;}
+    .talk .list .list01 ul li a h4 {font-size: 22px; margin-left: 10px;}
+    .talk .list .list01 ul li a span {font-size: 18px;}
+    .talk .list .list02 {margin-left: 20px;}
+    .talk .list .list02 .talk_search .search-box {height: 267px; padding: 73px 35px 0 35px;}
+    .talk .list .list02 .talk_search .search-box h4 {font-size: 30px; margin: 5px 0 20px 0;}
+    .talk .list .list02 .talk_search .search-box .search-txt {line-height: 68px;}
+    .talk .list .list02 .talk_put ul {margin-top: 20px;}
+    .talk .list .list02 .talk_put ul li a {height: 174px; padding: 38px 0 30px 0;}
+    .talk .list .list02 .talk_put ul li a h4 {font-size: 22px;}
+    .talk .list .list02 .talk_put ul li a strong {font-size: 20px; padding: 6px 20px;}
+}
+@media screen and (max-width:1200px){
+    .talk {padding: 146px 0 80px 0;}
+    .talk .tit span {width: 45px; height: 45px;}
+    .talk .list .list01 ul li a {padding: 10px 18px 10px 15px;}
+    .talk .list .list01 ul li a strong {font-size: 18px; width: 70px; line-height: 40px;}
+    .talk .list .list01 ul li a h4 {font-size: 20px; margin-left: 10px;}
+    .talk .list .list01 ul li a span {font-size: 15px;}
+    .talk .list .list02 .talk_search .search-box {height: 250px; padding: 60px 30px 0 30px;}
+    .talk .list .list02 .talk_search .search-box h4 {margin: 0 0 15px 0;}
+    .talk .list .list02 .talk_search .search-box .search-txt {line-height: 65px;}
+    .talk .list .list02 .talk_put ul li a {height: 150px; padding: 28px 0 0 0;}
+    .talk .list .list02 .talk_put ul li a h4 {font-size: 20px;}
+    .talk .list .list02 .talk_put ul li a strong {font-size: 18px;}
+}
+@media screen and (max-width:768px){
+    .talk {padding: 100px 0 80px 0;}
+    .talk .tit .tit_wrap a {justify-content: center; width: auto;}
+    .talk .tit span {width: 42px; height: 42px; margin-left: 10px;}
+    .talk .list {display: block; padding: 0 5%;}
+    .talk .list .list01 ul {margin-top: 25px;}
+    .talk .list .list01 ul li {margin-bottom: 13px;}
+    .talk .list .list02 {transform: translateY(0); margin-top: 13px; margin-left: 0;}
+    .talk .list .list02 .talk_search .search-box {height: auto; padding: 15px 12px 40px 12px;}
+    .talk .list .list02 .talk_search .search-box h4 {font-size: 23px; margin: 0 0 7px 0; text-align: center;}
+    .talk .list .list02 .talk_search .search-box p {display: none;}
+    .talk .list .list02 .talk_search .search-box .search-txt {line-height: 46px; border-radius: 25px; font-size: 18px;}
+    .talk .list .list02 .talk_search .search-box .search-btn::before {top: -3px; right: 25px; width: 23px; height: 23px;}
+    .talk .list .list02 .talk_put ul {margin-top: 13px;}
+    .talk .list .list02 .talk_put ul li {width: calc(33% - 6px);}
+    .talk .list .list02 .talk_put ul li a {height: 127px; padding: 20px 0 0 0;}
+    .talk .list .list02 .talk_put ul li a strong {font-size: 18px; padding: 4px 17px;}
+}
+@media screen and (max-width:550px){
+    .talk .list .list01 ul li a span {display: none;}
+}
+@media screen and (max-width:500px){
+    .talk .tit span {width: 32px; height: 32px;}
+}
+@media screen and (max-width:420px){
+    .talk .list .list02 .talk_put ul {display: block; text-align: left;}
+    .talk .list .list02 .talk_put ul li {width: 100%; margin-bottom: 10px;}
+    .talk .list .list02 .talk_put ul li a {height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;}
+    .talk .list .list02 .talk_put ul li a h4 {margin-bottom: 0;}
+    .talk .list .list02 .talk_put ul li a br {display: none;}
+
+}
 
 .display {
     padding: 170px 0 134px 0;
@@ -417,7 +506,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
 }
 .display .swiper ul li a {
     display: flex;
@@ -460,25 +548,42 @@
 .display .swiper ul li a:hover span::before {
     background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_35_11687' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='23' height='23'%3E%3Crect width='23' height='23' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_35_11687)'%3E%3Cpath d='M14.5337 11.4385L5.76103 2.90642C5.46264 2.61622 5.31842 2.2728 5.32836 1.87619C5.33831 1.47957 5.49248 1.13616 5.79087 0.845955C6.08926 0.555748 6.44236 0.410645 6.85016 0.410645C7.25796 0.410645 7.61106 0.555748 7.90945 0.845955L17.0701 9.78432C17.3088 10.0165 17.4878 10.2777 17.6072 10.5679C17.7265 10.8581 17.7862 11.1483 17.7862 11.4385C17.7862 11.7287 17.7265 12.0189 17.6072 12.3091C17.4878 12.5993 17.3088 12.8605 17.0701 13.0927L7.87961 22.031C7.58122 22.3212 7.2331 22.4615 6.83524 22.4518C6.43738 22.4422 6.08926 22.2922 5.79087 22.002C5.49248 21.7118 5.34328 21.3684 5.34328 20.9718C5.34328 20.5752 5.49248 20.2318 5.79087 19.9416L14.5337 11.4385Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
+@media screen and (max-width:1400px){
+    .display {padding: 155px 0 128px 0;}
+    .display .tit .tit_wrap a {margin-bottom: 53px;}
+    .display .tit span {margin-left: 15px;}
+    .display .tit span::before {width: 47px; height: 47px;}
+    .display .swiper ul li {width: 271px;}
+    .display .swiper ul li a {line-height: 37px; margin-top: 7px;}
+    .display .swiper ul li a strong {font-size: 18px; margin-left: 20px;}
+    .display .swiper ul li a span::before {top: -10px; right: 10px; width: 20px; height: 20px;}
+}
+@media screen and (max-width:1200px){
+    .display {padding: 150px 0 115px 0;}
+    .display .tit span::before {width: 45px; height: 45px;}
+}
+@media screen and (max-width:768px){
+    .display {padding: 100px 0 80px 0;}
+    .display .tit span::before {width: 42px; height: 42px;}
+    .display .swiper ul li {width: 253px;}
+}
+@media screen and (max-width:500px){
+    .display .tit span::before {width: 32px; height: 32px;}
+}
 
 .youtube {
-    padding: 150px 0 115px 0;
+    padding: 150px 0 100px 0;
     background-color: var(--color-main-y);
     color: #fff;
 }
 .youtube .tit {
     float: left;
+    width: 20%;
 }
 .youtube .tit h3 {
     font-size: var(--tit-txt-size);
     font-family: var(--tit-fontfamily);
     line-height: 1;
-}
-.youtube .list {
-    margin-left: 321px;
-}
-.youtube .list ul li {
-    width: 297px;
 }
 .youtube .tit_top a span.more {
     font-size: 0;
@@ -500,31 +605,24 @@
 .youtube .tit_sub {
     margin-top: -15px;
 }
-.youtube .tit_sub span {
+.youtube .tit_sub span.txt {
     font-weight: var(--txt-bold);
     font-size: 20px;
-    display: inline-block;
 }
 .youtube .tit_sub span.youtube_logo {
-    width: 2.25em;
-    height: 1.69em;
-    position: relative;
-}
-.youtube .tit_sub span.youtube_logo::before {
-    position: absolute;
-    top: 0;
-    width: 87%;
-    height: 48px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    content: "";
+    display: inline-block;
+    width: 39px;
+    height: 27px;
     background: url(../images/main/youtube_logo.svg) no-repeat center center / contain;
+    margin: 5px 5px -4px 0;
 }
-.youtube .swiper ul li {
-    width: 297px;
+.youtube .list {
+    margin-left: 25%;
 }
-.youtube .swiper ul li .photo {
+.youtube .list ul li {
+    width: calc(33% - 13px);
+}
+.youtube .list ul li .photo {
     overflow: hidden;
     font-size: 0;
     line-height: 0;
@@ -532,13 +630,13 @@
     border-radius: 20px;
     box-shadow: 4px 4px 4px #E2AE25;
 }
-.youtube .swiper ul li .photo img {
+.youtube .list ul li .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
-.youtube .swiper ul li:hover .photo img {
+.youtube .list ul li:hover .photo img {
     transform: scale3d(1.2, 1.2, 1)
 }
 .youtube .list ul li a p {
@@ -577,6 +675,37 @@
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_42_756' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='52' height='52'%3E%3Crect x='52' y='52' width='52' height='52' transform='rotate(-180 52 52)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_42_756)'%3E%3Cpath d='M26.52 23.4L18.2 23.4C17.4633 23.4 16.8458 23.6492 16.3475 24.1475C15.8492 24.6458 15.6 25.2633 15.6 26C15.6 26.7367 15.8492 27.3542 16.3475 27.8525C16.8458 28.3508 17.4633 28.6 18.2 28.6L26.52 28.6L24.18 30.94C23.7033 31.4167 23.465 32.0233 23.465 32.76C23.465 33.4967 23.7033 34.1033 24.18 34.58C24.6567 35.0567 25.2633 35.295 26 35.295C26.7367 35.295 27.3433 35.0567 27.82 34.58L34.58 27.82C35.1 27.3 35.36 26.6933 35.36 26C35.36 25.3067 35.1 24.7 34.58 24.18L27.82 17.42C27.3433 16.9433 26.7367 16.705 26 16.705C25.2633 16.705 24.6567 16.9433 24.18 17.42C23.7033 17.8967 23.465 18.5033 23.465 19.24C23.465 19.9767 23.7033 20.5833 24.18 21.06L26.52 23.4ZM26 -2.27299e-06C29.5967 -1.95856e-06 32.9767 0.682501 36.14 2.0475C39.3033 3.4125 42.055 5.265 44.395 7.605C46.735 9.945 48.5875 12.6967 49.9525 15.86C51.3175 19.0233 52 22.4033 52 26C52 29.5967 51.3175 32.9767 49.9525 36.14C48.5875 39.3033 46.735 42.055 44.395 44.395C42.055 46.735 39.3033 48.5875 36.14 49.9525C32.9767 51.3175 29.5967 52 26 52C22.4033 52 19.0233 51.3175 15.86 49.9525C12.6967 48.5875 9.945 46.735 7.605 44.395C5.265 42.055 3.4125 39.3033 2.04751 36.14C0.682504 32.9767 1.95856e-06 29.5967 2.27299e-06 26C2.58742e-06 22.4033 0.682506 19.0233 2.04751 15.86C3.41251 12.6967 5.265 9.945 7.605 7.605C9.945 5.265 12.6967 3.4125 15.86 2.0475C19.0233 0.6825 22.4033 -2.58742e-06 26 -2.27299e-06Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
     top: -100px;
     left: 190px;
+}
+@media screen and (max-width:1400px){
+    .youtube {padding: 120px 0 100px 0;}
+    .youtube .wrapper {width: 100%;}
+    .youtube .tit {float: none; width: 100%;}
+    .youtube .tit_top a {display: flex; justify-content: center;}
+    .youtube .tit_top a span.more::before {top: 0; left: 10px; width: 47px; height: 47px;}
+    .youtube .tit_sub {margin-top: 0; text-align: center;}
+    .youtube .tit_sub span.txt {font-size: 18px;}
+    .youtube .list {margin: 30px 0 0 0;}
+    .youtube .list ul li {width: calc(45% - 8px);}
+    .youtube .list ul li a p {font-size: 18px; margin-top: 15px;}
+    .youtube .btn_wrap button {display: none;}
+}
+@media screen and (max-width:1200px){
+    .youtube {padding: 100px 0 85px 0;}
+    .youtube .tit_top a span.more::before {width: 45px; height: 45px;}
+    .youtube .tit_sub {margin-top: 5px;}
+    .youtube .tit_sub span.txt {font-size: 16px;}
+    .youtube .tit_sub span.youtube_logo {width: 31px; height: 23px;}
+    .youtube .list {margin: 20px 0 0 0;}
+    .youtube .list ul li a p {font-size: 17px; margin-top: 15px;}
+}
+@media screen and (max-width:768px){
+    .youtube {padding: 100px 0 80px 0;}
+    .youtube .tit_top a span.more::before {width: 42px; height: 42px;}
+    .youtube .tit_sub {display: none;}
+    .youtube .list ul li a p {font-size: 16px; margin-top: 10px;}
+}
+@media screen and (max-width:500px){
+    .youtube .tit_top a span.more::before {width: 32px; height: 32px;}
 }
 
 .notice {
@@ -618,7 +747,7 @@
     gap: 24px;
 }
 .notice .list ul li {
-    width: calc(34% - 16px);
+    width: calc(33% - 16px);
 }
 .notice .list ul li a {
     display: block;
@@ -679,7 +808,7 @@
     left: 0;
     top: 0;
     width: 130px;
-    height: 140px;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -697,11 +826,12 @@
 }
 .notice .banner ul li .banner_tit {
     color: #fff;
-    margin: 6% 0 6% 23%;
+    margin: 36px 34px 38px 146px;
 }
 .notice .banner ul li .banner_tit h4 {
     font-size: 30px;
     font-weight: var(--txt-bold);
+    margin-bottom: 3px;
 }
 .notice .banner ul li .more span {
     font-size: 25px;
@@ -717,3 +847,58 @@
     color: #fff;
     background-color: #3d3d3d;
 }
+@media screen and (max-width:1400px){
+    .notice {padding: 155px 0 128px 0;}
+    .notice .tit span::before {width: 47px; height: 47px;}
+    .notice .list ul {gap: 20px;}
+    .notice .list ul li {width: calc(33% - 13px);}
+    .notice .list ul li a {height: 135px; padding: 20px 27px 0 18px;}
+    .notice .list ul li a .list_tit strong {font-size: 17px; line-height: 35px; width: 63px;}
+    .notice .list ul li a .list_tit p {font-size: 18px; width: 280px; margin-top: 3px;}
+    .notice .list ul li a .date {margin-top: 20px;}
+    .notice .banner ul {margin-top: 20px;}
+    .notice .banner ul li .banner_tit {margin: 32px 27px 32px 140px;}
+    .notice .banner ul li .banner_tit h4 {font-size: 27px; margin: 0;}
+    .notice .banner ul li .more span {font-size: 22px; padding: 17px 22px;}
+}
+@media screen and (max-width:1200px){
+    .notice {padding: 110px 0 110px 0;}
+    .notice .tit span::before {width: 45px; height: 45px;}
+    .notice .list ul li a {height: auto; padding: 17px 23px 17px 16px;}
+    .notice .list ul li a .list_tit strong {font-size: 16px; line-height: 33px;;}
+    .notice .banner ul li::before {left: -16px;}
+    .notice .banner ul li .banner_tit {margin: 20px 27px 20px 100px;}
+    .notice .banner ul li .banner_tit h4 {font-size: 27px; line-height: 1.1; margin: 10px 0;}
+    .notice .banner ul li .banner_tit p {display: none;}
+    .notice .banner ul li .more span {font-size: 20px; padding: 16px 23px;}
+}
+@media screen and (max-width:800px){
+    .notice .banner ul li .banner_tit {margin: 20px 0 20px 100px;}
+    .notice .banner ul li::before {left: -20px; top: 5px; height: 90%;}
+    .notice .banner ul li .more span {margin-right: 20px;}
+}
+@media screen and (max-width:768px){
+    .notice {padding: 90px 0 80px 0;}
+    .notice .tit span::before {width: 42px; height: 42px;}
+    .notice .list ul {display: block;}
+    .notice .list ul li {width: 100%; margin-bottom: 10px;}
+    .notice .list ul li a {height: auto; padding: 8px 23px 14px 16px;}
+    .notice .list ul li a .list_tit {justify-content: flex-start; align-items: center;}
+    .notice .list ul li a .list_tit strong {font-size: 16px; line-height: 33px;}
+    .notice .list ul li a .list_tit p {font-size: 16px; width: 100%; margin-top: 0; height: 1.3em;}
+    .notice .list ul li a .date {margin-top: -25px;}
+    .notice .banner ul {margin-top: 15px;}
+    .notice .banner ul li::before {display: none;}
+    .notice .banner ul li .banner_tit {margin: 10px 0 10px 20px;}
+    .notice .banner ul li .banner_tit h4 {font-size: 23px; line-height: 1.1; margin: 10px 0;}
+    .notice .banner ul li .banner_tit p {display: none;}
+    .notice .banner ul li .more span {font-size: 16px; padding: 8px 12px; margin-right: 20px;}
+}
+@media screen and (max-width:620px){
+    .notice .list ul li a {padding: 10px 23px 10px 16px;}
+    .notice .list ul li a .date {display: none;}
+}
+@media screen and (max-width:500px){
+    .notice .tit span::before {width: 32px; height: 32px;}
+}
+

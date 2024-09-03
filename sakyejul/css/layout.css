@@ -68,7 +68,7 @@ header .header_top .tnb ul li:last-child a {
 header .header_sub {
     color: #fff;
     height: 80px;
-    border: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
     position: relative;
 }
 header .header_sub .logo {
@@ -247,6 +247,19 @@ header .header_sub .gnb .all_menu_wrap .inner ul.depth1_02 > li.skip:hover {
     border-color: transparent;
     background-color: transparent;
 }
+@media screen and (max-width:1200px){
+    header .header_top {display: none;}
+    header .header_sub {height: 60px;}
+    header .header_sub .logo a {width: 107px; height: 29px;}
+    header .header_sub .logo a::before {top: 16px;}
+    header .header_sub .gnb .gnb_wrap ul.depth1 {display: none;}
+    header .header_sub .gnb .side_btn_wrap .search::before {top: 19px; width: 22px; height: 22px;}
+    header .header_sub .side_btn_wrap .gnb_btn::before {top: 19px; width: 22px; height: 22px;}
+}
+@media screen and (max-width:768px){
+    header .header_sub .logo a::before {left: 20px;}
+    header .header_sub .gnb .side_btn_wrap {margin-right: 20px;}
+}
 
 footer {
     padding: 160px 0 88px 0;
@@ -286,4 +299,14 @@ footer .f_cont .f_info address, footer .f_cont .f_info span {
 footer .f_cont .copyright {
     color: #ccc;
     margin-top: 56px;
+}
+@media screen and (max-width:1400px){
+    footer {padding: 140px 0 60px 0;}
+    footer .f_cont .logo span::before {bottom: 50px;}
+    footer .f_cont .copyright {margin-top: 40px;}
+}
+@media screen and (max-width:1400px){
+    footer {padding: 100px 0 40px 0;}
+    footer .f_cont .logo span::before {bottom: 35px;}
+    footer .f_cont .copyright {margin-top: 30px;}
 }

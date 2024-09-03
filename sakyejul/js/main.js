@@ -75,13 +75,14 @@ $(document).ready(function(){
     const book_swiper = new Swiper('.book .tab .sub_tab .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: "auto",
         spaceBetween: 16,
+        centeredSlides: true,
         breakpoints: {
         768: {
-            spaceBetween: 20, 
+            spaceBetween: 20,
+            centeredSlides: false,
         },
-        1300: {
-            slidesPerView: 4,
-            spaceBetween: 24, 
+        1400: {
+            spaceBetween: 24,
         },
         },
         scrollbar: {
@@ -160,6 +161,7 @@ $(document).ready(function(){
             nextEl: '.btn_wrap .btn_next',
             prevEl: '.btn_wrap .btn_prev',
         },
+        centeredSlides: true,
         loop: true,
     });//youtube_swiper
 
