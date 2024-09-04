@@ -73,8 +73,8 @@ header .header_sub {
 }
 header .header_sub .logo {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 44px;
+    top: 11px;
 }
 header .header_sub .logo a {
     display: block;
@@ -86,8 +86,8 @@ header .header_sub .logo a {
 }
 header .header_sub .logo a::before {
     position: absolute;
-    left: 44px;
-    top: 11px;
+    left: 0;
+    top: 0;
     width: 80%;
     height: 100%;
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
@@ -171,8 +171,7 @@ header .header_sub .gnb .side_btn_wrap .search::before   {
 @media screen and (max-width:1250px){
     header .header_top {display: none;}
     header .header_sub {height: 60px;}
-    header .header_sub .logo a {width: 107px; height: 29px;}
-    header .header_sub .logo a::before {top: 16px; left: 20px;}
+    header .header_sub .logo {left: 20px;}
     header .header_sub .gnb .gnb_open {
         position: absolute; /* header를 기준으로 정렬 */
         right: 0;
