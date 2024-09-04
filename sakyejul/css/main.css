@@ -273,15 +273,9 @@
     .book .tabs .tab .sub_tab ul li {width: calc(25% - 18px); }
     .book .tabs .tab .sub_tab ul li a .tit h4 {font-size: 22px;}
     .book .tab .sub_tab .scrollbar {margin: 70px 0 0 0;}
-    .book .tabs .tab.active {
-        display: block;
-    }
-    .book .tabs .tab .sub_tab_wrap {
-        width: auto;
-    }
-    .book .tabs .tab .sub_tab_wrap .sub_tab {
-        width: auto;
-    }
+    .book .tabs .tab.active {display: block;}
+    .book .tabs .tab .sub_tab_wrap {width: auto;}
+    .book .tabs .tab .sub_tab_wrap .sub_tab {width: auto;}
 }
 @media screen and (max-width:1250px){
     .book {padding: 123px 0 204px 0;}
@@ -297,6 +291,7 @@
 }
 @media screen and (max-width:768px){
     .book {width: 100%;}
+    .book {padding: 80px 0 70px 0;}
     .book .tabs .tab > ul > li {margin: 0 10px 25px 10px; text-align: center; line-height: 1.1;}
     .book .tabs .tab > ul > li > a {font-size: 25px;}
     .book .tabs .tab .sub_tab ul li a .tit_wrap {padding: 17px 0 18px 0;}
