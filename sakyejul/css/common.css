@@ -35,6 +35,9 @@ html, body {
     }
 }/* media */
 @media screen and (max-width:500px){
+    .wrapper {
+        width: 95%;
+    }
     html, body {
         font-size: 13px;
     }
@@ -71,4 +74,7 @@ html, body {
 }
 @media screen and (max-width:500px){
     :root {--tit-txt-size : 32px;}
+}
+@media screen and (max-width:370px){
+    :root {--tit-txt-size : 26px;}
 }

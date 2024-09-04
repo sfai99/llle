@@ -15,7 +15,7 @@ $(document).ready(function(){
     let scrolling 
     let scroll_top //header 고정 시작 값
     let window_w
-    let mobile_size = 1024
+    let mobile_size = 1250
     let pc_mobile
 
     function scroll_chk(){
@@ -69,41 +69,8 @@ $(document).ready(function(){
         $('header').removeClass('menu_over')
         $('header .header_sub .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
-    /* 
-        모바일 메뉴 
-        header .header_sub .gnb .gnb_wrap .depth1 > li > a 를 클릭했을때
 
-        1차 메뉴 a의 href값을 무력화 (즉, 클릭해도 해당 페이지로 이동 되지 않도록)
-        li에 open클래스를 줘야함
-        열려있는 메뉴를 클릭하면 닫히고, 닫힌 메뉴를 클릭하면 열림 
-        (동시에 여러개의 메뉴가 열릴 수 있음)
-    */
-    $('header .header_sub .gnb .gnb_wrap .depth1 > li > a').on('click', function(e){
-        if(pc_mobile == 'mo'){ //모바일에서만 작동
-            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
-            $(this).parent().toggleClass('open')
-        }
-    })
-
-    $('header .header_sub .gnb .gnb_open').on('click', function(){
-        $('header').addClass('menu_open')
-        //하단 콘텐츠 스크롤 금지
-        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
-    })
-    $('header .header_sub .gnb .gnb_close').on('click', function(){
-        $('header').removeClass('menu_open')
-        //하단 콘텐츠 스크롤 금지 해제
-        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
-    })
-
-    $('.quick .open').on('click', function(){
-        $('.quick').addClass('open')
-    })
-    $('.quick .close').on('click', function(){
-        $('.quick').removeClass('open')
-    })
-
-    $('.quick .top').on('click', function(){
+    $('.quick_menu .top').on('click', function(){
         $('html, body').animate({
             scrollTop : 0
         }, 500)

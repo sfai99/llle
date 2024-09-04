@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     function resize_chk(){
         win_w = $(window).width()
-        if(win_w > 1024){
+        if(win_w > 1250){
             pc_mobile = 'pc'
         }else{
             pc_mobile = 'mobile'
@@ -32,25 +32,6 @@ $(document).ready(function(){
         resize_chk()
     })//$(window).resize
 
-    $('header').on('mouseenter focusin', function(){
-        $(this).addClass('fixed')
-    })
-    $('header').on('mouseleave', function(){
-        //마우스를 아웃했을때 fixed클래스를 삭제하는건 맨 상단에 있을때만 가능
-        if(scrolling <= 0){ //scroll값이 0과 같거나 작을때
-            $(this).removeClass('fixed')
-        }
-    })
-
-    function scroll_chk(){
-        scrolling = $(window).scrollTop()
-        if(scrolling > 0){ //스크롤이 조금이라도 되었다면
-            $('header').addClass('fixed')
-        }else{
-            $('header').removeClass('fixed')
-        }
-        console.log(scrolling)
-    }
     scroll_chk() // 브라우저가 로딩되었을때 한번실행
     $(window).scroll(function(){ //스크롤 할때마다 한번실행
         scroll_chk()
@@ -97,11 +78,11 @@ $(document).ready(function(){
         메뉴닫기를 클릭하면 header에 menu_open 삭제
         header .gnb .gnb_close
     */
-    $('header .gnb .gnb_open').on('click', function(){
+    $('header .gnb_open').on('click', function(){
         $('header').addClass('menu_open')
         $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
     })
-    $('header .gnb .gnb_close').on('click', function(){
+    $('header .gnb_close').on('click', function(){
         $('header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
