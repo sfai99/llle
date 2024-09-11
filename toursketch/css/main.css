@@ -1,0 +1,107 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper {
+    height: 950px;
+}
+.visual .swiper .bg01 {background: url(../images/main/visual_bg01.png) no-repeat center center / cover;}
+.visual .swiper .bg02 {background: url(../images/main/visual_bg02.png) no-repeat center center / cover;}
+.visual .swiper .bg03 {background: url(../images/main/visual_bg03.png) no-repeat center center / cover;}
+.visual .swiper ul li {
+    padding: 610px 0 0 50px;
+    color: #fff;
+}
+.visual .swiper ul li h2 {
+    font-size: 35px;
+    font-family: var(--tit-fontfamily);
+}
+.visual .info {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 83%;
+}
+.visual .info ul {
+    display: flex;
+    background-color: #fff;
+    color: #666;
+    padding-right: 17%;
+}
+.visual .info ul li {
+    width: 25%;
+}
+.visual .info ul li a {
+    display: block;
+    padding-top: 55px;
+    text-align: center;
+}
+
+.tit {
+    text-align: center;
+}
+.tit span {
+    color: var(--color-main);
+    font-family: var(--tit_sub-fontfamily);
+    font-size: 23px;
+    position: relative;
+}
+.tit span::after {
+    position: absolute;
+    top: 13%;
+    right: -18px;
+    width: 14px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.7605 4.72266C12.1492 5.37865 11.8301 6.15212 11.4932 6.93182C10.9734 8.12945 10.2956 9.21896 9.17178 9.97684C8.45133 10.4613 7.63108 10.5632 6.81082 10.6744C6.45216 10.7222 6.0831 10.7004 5.72339 10.7191C4.79502 10.768 3.8625 10.8002 3.00586 11.319C4.03715 10.034 4.38957 8.40807 5.34705 7.12103C6.24735 5.91093 7.48865 5.28716 8.96282 5.15721C10.227 5.05117 11.5192 5.21959 12.7605 4.72266Z' fill='%2317A951'/%3E%3Cpath d='M3.37991 0C3.22917 1.35773 3.75938 2.56991 4.16274 3.78106C4.78651 5.65235 4.41121 7.33444 3.45373 8.9791C2.96927 9.81079 2.26234 10.5032 1.96605 11.4534C1.8756 11.7445 1.67184 11.6124 1.55021 11.4243C0.161289 9.18806 -0.576838 6.86557 0.551137 4.27279C1.24144 2.68739 2.34342 1.38372 3.37991 0Z' fill='%2317A951'/%3E%3Cpath d='M14.2007 13.5528C13.9006 13.7754 13.5523 13.9243 13.184 13.9873C11.8387 14.2992 10.4997 14.6516 9.13885 14.8699C6.728 15.2556 4.53235 14.8294 2.8118 12.9186C2.45105 12.5183 2.48848 12.3645 2.98749 12.2137C3.4865 12.063 4.0011 11.8738 4.51051 11.7127C6.57413 11.0567 8.56499 11.0889 10.5153 12.1763C11.6277 12.7949 12.7172 13.5351 14.2007 13.5528Z' fill='%2317A951'/%3E%3C/svg%3E%0A");
+    content: "";
+}
+.tit h2 {
+    color: var(--tit-txt-color);
+    font-family: var(--tit-fontfamily);
+    font-size: var(--tit-txt-size);
+    line-height: var(--tit-lineheight);
+}
+.travel_01 {
+    background: url(../images/main/travel_01_bg.png) no-repeat center center / cover;
+    padding-top: 150px;
+}
+.travel_01 .list .swiper {
+    margin-top: 40px;
+}
+.travel_01 .list .swiper ul li {
+    position: relative;
+}
+.travel_01 .list .swiper ul li .txt {
+    background-color: var(--color-main);
+    color: #fff;
+    padding: 105px 48px 85px 48px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.travel_01 .list .swiper ul li .txt h3 {
+    font-size: 30px;
+    font-weight: var(--txt-bold);
+    text-align: center;
+    white-space: nowrap;
+}
+.travel_01 .list .swiper ul li .txt p {
+    width: 200px;
+    margin: 10px 0 100px 0;
+}
+.travel_01 .list .swiper ul li .photo {
+    width: 1110px;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+    margin-left: 150px;
+}
