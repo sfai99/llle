@@ -137,6 +137,14 @@ header .gnb .gnb_wrap .search {
 header.menu_over .gnb .gnb_wrap .depth2 {
     display: block;
 }
+@media screen and (max-width:1300px){
+    header {
+        padding: 0 30px;
+    }
+    header .gnb .gnb_wrap .depth1 {
+        display: none;
+    }
+}
 
 footer {
     padding: 90px 0 100px 0;
@@ -144,6 +152,7 @@ footer {
 footer .footer_top {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     border-bottom: 1px solid #aaa;
     padding-bottom: 25px;
 }
@@ -224,4 +233,14 @@ footer .footer_sub .worker span:first-child {
 footer .copyright {
     color: #ccc;
     margin-top: -20px;
+}
+@media screen and (max-width:1300px){
+    footer {
+        padding: 70px 0 80px 0;
+    }
+}
+@media screen and (max-width:1000px){
+    footer {
+        padding: 50px 0 60px 0;
+    }
 }
