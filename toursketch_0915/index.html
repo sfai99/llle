@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script> 
+    <script src="js/main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <title>여행스케치</title>
+</head>
+<body>
+    <div class="skip_nav">
+        <a href="#skip_contents">본문 바로가기</a>
+        <a href="#skip_menu">대메뉴 바로가기</a>
+    </div>
+    <div id="wrap">
+        <!--
+            pc버전에서 메뉴에 마우스를 오버했을때 menu_over
+            모바일버전에서 메뉴를 클릭해서 열었을때 menu_open
+            상단에 메뉴가 고정될때 fixed
+        -->
+        <header>
+            <h1 class="logo"><a href="index.html">여행스케치</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>여행스케치</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>회사소개</span></a></li>
+                                <li><a href="#n"><span>찾아오시는 길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>여행</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>금주출발여행</span></a></li>
+                                <li><a href="#n"><span>특가여행</span></a></li>
+                                <li><a href="#n"><span>체험여행</span></a></li>
+                                <li><a href="#n"><span>시즌여행</span></a></li>
+                                <li><a href="#n"><span>숙박여행</span></a></li>
+                                <li><a href="#n"><span>기차여행</span></a></li>
+                                <li><a href="#n"><span>섬여행</span></a></li>
+                                <li><a href="#n"><span>제주여행</span></a></li>
+                                <li><a href="#n"><span>기획전</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>고객지원</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>출발장소</span></a></li>
+                                <li><a href="#n"><span>환불규정</span></a></li>
+                                <li><a href="#n"><span>고객센터</span></a></li>
+                                <li><a href="#n"><span>가이드정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mypage"><a href="#n">마이페이지</a></div>
+                    <button class="search">검색</button>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+        </header>
+        <main class="container" id="skip_contents">
+            <section class="visual">
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide bg01">
+                            <h2>아름다운 심청이의 고장 백령도</h2>
+                            <p>서해 최북단 청정해역 환상의 섬 백령도로 떠나보세요.</p>
+                        </li>
+                        <li class="swiper-slide bg02">
+                            <h2>대한민국 대표 축제 & 가을꽃여행</h2>
+                            <p>산들산들 가을바람 타고 행복가득 가을 축제와 꽃 여행을 떠나보세요.</p>
+                        </li>
+                        <li class="swiper-slide bg03">
+                            <h2>가슴 설레이는 여행지, 강원</h2>
+                            <p>‘휴식, 행복, 치유’ 아름다운 강원도로 떠나보세요.</p>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <button class="btn_prev">이전</button>
+                    <button class="btn_next">다음</button>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li class="info01"><a href="#n">고객센터</a></li>
+                        <li class="info02"><a href="#n">출발장소</a></li>
+                        <li class="info03"><a href="#n">예약조회</a></li>
+                        <li class="info04"><a href="#n">가이드정보</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="travel01">
+                <div class="wrapper">
+                    <div class="tit">
+                        <span>갑자기 떠나고 싶을 때</span>
+                        <h2>금주 출발여행</h2>
+                    </div>
+                    <div class="list">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="txt">
+                                        <h3>부산 광안리</h3>
+                                        <p>다양한 맛집의 향연, 바다가 보이는 카페, 골목 곳곳에 위치한 이색 공간, 멋진 야경을 함께 즐겨보세요.</p>
+                                        <div class="more"><a href="#n">More View</a></div>
+                                    </div>
+                                    <div class="photo"><img src="images/main/travel_101.png" alt="여행지사진"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="txt">
+                                        <h3>전주 한옥마을</h3>
+                                        <p>아름다운 골목길 모습과 한옥의 정취를 느껴보고, 밤이 찾아오면 감미로운 야경을 감상해보세요.</p>
+                                        <div class="more"><a href="#n">More View</a></div>
+                                    </div>
+                                    <div class="photo"><img src="images/main/travel_102.png" alt="여행지사진"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="txt">
+                                        <h3>홍성 남당항</h3>
+                                        <p>홍성 최고의 관광지, 각종 해산물 축제와 멋진 노을뷰를 보며 즐거운 추억을 만들어보세요.</p>
+                                        <div class="more"><a href="#n">More View</a></div>
+                                    </div>
+                                    <div class="photo"><img src="images/main/travel_103.png" alt="여행지사진"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="txt">
+                                        <h3>철원 고석정</h3>
+                                        <p>기묘한 바위와 깎아 내린 듯한 벼랑의 아름다움과 계곡에서는 보기 드문 하얀 모래밭을 감상해보세요.</p>
+                                        <div class="more"><a href="#n">More View</a></div>
+                                    </div>
+                                    <div class="photo"><img src="images/main/travel_104.png" alt="여행지사진"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="txt">
+                                        <h3>인천 영흥도</h3>
+                                        <p>차를 타고 떠나는 매력적인 섬 여행, 하늘 위로 떠가는 비행기와 멋진 야경을 보러 떠나보세요.</p>
+                                        <div class="more"><a href="#n">More View</a></div>
+                                    </div>
+                                    <div class="photo"><img src="images/main/travel_105.png" alt="여행지사진"></div>
+                                </li>
+                            </ul>                            
+                        </div>
+                        <button class="btn_prev">이전</button>
+                        <button class="btn_next">다음</button>
+                    </div>
+                </div>
+            </section>
+            <section class="travel02">
+                <div class="tit">
+                    <span>한 번쯤 가봐야할 인생 여행지</span>
+                    <h2>이달의 추천여행</h2>
+                </div>
+                <div class="list">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/travel_201.png" alt="여행지사진"></div>
+                                <div class="txt">
+                                    <strong>경상북도 문경</strong>
+                                    <h3>문경새재 도립공원</h3>
+                                    <p>옛 선비들이 영남과 한양을 오가던 고갯길로 메인 새재길 사이사이 이어진 옛길은 자연 그대로의 숲길로 또 다른 분위기의 산책을 즐길 수 있다. 더욱이 문경 자연생태 박물관의 자연생태 공원지구가 도립공원 안에 있어 다양한 생태여행의 재미를 쉽게 즐길 수 있다.</p>
+                                    <div class="more"><a href="#n">More View</a></div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/travel_202.png" alt="여행지사진"></div>
+                                <div class="txt">
+                                    <strong>충청북도 영동</strong>
+                                    <h3>노근리 평화공원</h3>
+                                    <p>1950년 한국전쟁 당시 민간인 피해 사건이 있었던 노근리 쌍굴다리와 노근리 사건을 추모하고 인권과 평화를 기념하기 위해 조성되었다. 노근리 평화기념관과 교육관, 위령탑, 조각 공원, 50년대 생활관, 방문자 센터, 평화의 쉼터, 야외전시장 및 야외공원 시설을 이용할 수 있다.</p>
+                                    <div class="more"><a href="#n">More View</a></div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/travel_203.png" alt="여행지사진"></div>
+                                <div class="txt">
+                                    <strong>강원도 속초</strong>
+                                    <h3>속초 해수욕장</h3>
+                                    <p>속초를 대표하는 해수욕장으로 속초 시내에서 가깝고 모래와 수질이 깨끗하다. 편의시설이 잘되어 있으며 해변 앞에는 조도라는 섬이 있어 경치가 아름답고, 인근에 설악산이 있어 산과 바다를 함께 즐길 수 있다. 아바이마을이 가까이 있으니 함께 둘러보기에도 좋다.</p>
+                                    <div class="more"><a href="#n">More View</a></div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/travel_204.png" alt="여행지사진"></div>
+                                <div class="txt">
+                                    <strong>충청남도 공주</strong>
+                                    <h3>정안청 생태공원</h3>
+                                    <p>작은 연못 사이사이로 색색의 연꽃이 예쁘게 피어 볼거리를 더해주는 곳. 메타세콰이어 길을 따라 산책하기 좋으며, 가을에는 서서히 물들어가는 나뭇잎들로 가을의 정취를 느낄 수 있다. 거대한 나무들 사이에서 독특한 분위기의 사진도 남길 수 있어, 가을을 추억하기 좋은 장소이다.</p>
+                                    <div class="more"><a href="#n">More View</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn_prev">이전</button>
+                    <button class="btn_next">다음</button>
+                </div>
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <span>고객님들과 소통하는 여행스케치</span>
+                        <h2>여행스케치 소식</h2>
+                    </div>
+                    <div class="tab">
+                        <ul>
+                            <li class="news01 on">
+                                <button class="tab_menu">공지사항</button>
+                                <div class="tab_detail">
+                                    <div class="list">
+                                        <ul>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>여행스케치 8월 마지막주 특별한 축제여행</h3>
+                                                    <span>2024.08.19</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>스티커 모음 포인트제공 종료안내</h3>
+                                                    <span>2024.05.24</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>여행스케치 가이드 채용공고</h3>
+                                                    <span>2024.01.10</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>여행스케치 변경사항 안내</h3>
+                                                    <span>2023.12.15</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="news02">
+                                <button class="tab_menu">스토리</button>
+                                <div class="tab_detail">
+                                    <div class="list">
+                                        <ul>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>2024 광주광역시 동구 전담여행사 지정</h3>
+                                                    <span>2024.06.17</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>2024 여행스케치 신입 가이드를 소개합니다</h3>
+                                                    <span>2024.02.23</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>2023 광주 동구 전담여행사 우수상 수상</h3>
+                                                    <span>2024.02.23</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#n">
+                                                    <h3>2023 평창군 시티투어 전담여행사 지정</h3>
+                                                    <span>2023.07.26</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="review">
+                <div class="wrapper">
+                    <div class="tit">
+                        <span>믿고 가는 즐거운 여행</span>
+                        <h2>고객님들의 여행후기</h2>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_top">
+                                        <div class="photo"><img src="images/main/review01.png" alt="여행지사진"></div>
+                                        <div class="txt">
+                                            <span>★★★★★</span>
+                                            <strong>이*혜님</strong>
+                                        </div>
+                                    </div>
+                                    <p>기사님은 출발시간 전인데도 계속 에어컨 틀어주셔서 그나마 쉼을 할 수가 있었습니다. 차가 밀리지 않아 서울 일찍 도착해서 좋았고 안전 운전해 주신 기사님께 감사드립니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_top">
+                                        <div class="photo"><img src="images/main/review02.png" alt="여행지사진"></div>
+                                        <div class="txt">
+                                            <span>★★★★★</span>
+                                            <strong>신*정님</strong>
+                                        </div>
+                                    </div>
+                                    <p>선비체험과 엿만들기 체험은 이색적이었고, 제공되는 식사도 너무 맛있었습니다. 두손 가득 신나는 고령여행 강추합니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_top">
+                                        <div class="photo"><img src="images/main/review03.png" alt="여행지사진"></div>
+                                        <div class="txt">
+                                            <span>★★★★★</span>
+                                            <strong>김*은님</strong>
+                                        </div>
+                                    </div>
+                                    <p>조금 더웠지만 예쁜 하늘 덕분에 더 신났던 영동여행 가이드님도 잘 챙겨주시고 양손가득 포도도 들고오고 너무 잘 다녀왔습니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="list_top">
+                                        <div class="photo"><img src="images/main/review04.png" alt="여행지사진"></div>
+                                        <div class="txt">
+                                            <span>★★★★★</span>
+                                            <strong>김*자님</strong>
+                                        </div>
+                                    </div>
+                                    <p>바다정원카페에서 바다도 실컷보고 속초시장에서 오징어순대도 먹고 너무 알찬 구성이었습니다. 이렇게 좋은 코스를 너무나 좋은 가격으로 갈 수 있어 너무 고맙습니다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more"><a href="#n">More View</a></div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="wrapper">
+                <div class="footer_top">
+                    <div class="f_sns">
+                        <ul>
+                            <li class="sns01"><a href="#n">카카오톡</a></li>
+                            <li class="sns02"><a href="#n">네이버밴드</a></li>
+                            <li class="sns03"><a href="#n">유튜브</a></li>
+                        </ul>
+                    </div>
+                    <div class="f_info">
+                        <span class="tit">Contact Us</span>
+                        <address>04314 서울특별시 용산구 원효로89길 18-4, 1층</address>
+                        <span>(02)701-2506</span>
+                        <span>팩스번호 : (02)701-2508</span>
+                        <span>E-mail : tourno1@toursketch.co.kr</span>
+                    </div>
+                </div>
+                <div class="footer_sub">
+                    <div class="f_nav">
+                        <ul class="f_nav01">
+                            <li><span>(주)여행스케치여행사</span></li>
+                            <li><span>대표이사 : 박영규</span></li>
+                        </ul>
+                        <ul class="f_nav02">
+                            <li><a href="#n">이용약관</a></li>
+                            <li><a href="#n"><strong>개인정보처리방침</strong></a></li>
+                            <li><a href="#n">여행약관</a></li>
+                        </ul>
+                    </div>
+                    <div class="worker">
+                        <span>※감정노동자보호법(산업안전보건법 제 26조의 2) - 2018.10.18 시행</span><br>
+                        <span>(주)여행스케치여행사는 산업안전보건법 고객응대 근로자 보호조치를 취하고 있으며,<br>
+                            어떠한 상황이든 직원의 인격권을 우선으로 보호하고 있습니다.</span>
+                    </div>
+                </div>
+                <div class="copyright">ⓒ All rights Reserved.</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
