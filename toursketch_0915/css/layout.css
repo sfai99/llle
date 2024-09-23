@@ -33,20 +33,18 @@ header {
     border-bottom: 1px solid rgba(255,255,255,0.3);
     padding: 0 50px;
 }
-header .logo a {
+header h1 {
     margin-top: 17px;
-    font-size: 0;
-    line-height: 0;
-    position: relative;
-}
-header .logo a::before {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 134px;
     height: 38px;
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+    height: 100%;
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
-    content: "";
 }
 header .gnb {
     display: flex;
@@ -122,24 +120,19 @@ header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
     display: flex;
 }
 header .gnb .gnb_wrap .mypage {
-    position: absolute;
-    top: 50%;
-    right: 44px;
-    transform: translate(0, -50%);
     font-size: 0;
     line-height: 0;
+    margin: 22px 40px 0 0;
+}
+
+header .gnb .gnb_wrap .mypage a {
+    display: block;
     width: 25px;
     height: 25px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_160_858' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_160_858)'%3E%3Cpath d='M5.235 17.61C6.17 16.895 7.215 16.3313 8.37 15.9188C9.525 15.5063 10.735 15.3 12 15.3C13.265 15.3 14.475 15.5063 15.63 15.9188C16.785 16.3313 17.83 16.895 18.765 17.61C19.4067 16.8583 19.9063 16.0058 20.2638 15.0525C20.6213 14.0992 20.8 13.0817 20.8 12C20.8 9.56167 19.9429 7.48542 18.2288 5.77125C16.5146 4.05708 14.4383 3.2 12 3.2C9.56167 3.2 7.48542 4.05708 5.77125 5.77125C4.05708 7.48542 3.2 9.56167 3.2 12C3.2 13.0817 3.37875 14.0992 3.73625 15.0525C4.09375 16.0058 4.59333 16.8583 5.235 17.61ZM12 13.1C10.9183 13.1 10.0063 12.7288 9.26375 11.9863C8.52125 11.2438 8.15 10.3317 8.15 9.25C8.15 8.16833 8.52125 7.25625 9.26375 6.51375C10.0063 5.77125 10.9183 5.4 12 5.4C13.0817 5.4 13.9938 5.77125 14.7363 6.51375C15.4788 7.25625 15.85 8.16833 15.85 9.25C15.85 10.3317 15.4788 11.2438 14.7363 11.9863C13.9938 12.7288 13.0817 13.1 12 13.1ZM12 23C10.4783 23 9.04833 22.7113 7.71 22.1338C6.37167 21.5563 5.2075 20.7725 4.2175 19.7825C3.2275 18.7925 2.44375 17.6283 1.86625 16.29C1.28875 14.9517 1 13.5217 1 12C1 10.4783 1.28875 9.04833 1.86625 7.71C2.44375 6.37167 3.2275 5.2075 4.2175 4.2175C5.2075 3.2275 6.37167 2.44375 7.71 1.86625C9.04833 1.28875 10.4783 1 12 1C13.5217 1 14.9517 1.28875 16.29 1.86625C17.6283 2.44375 18.7925 3.2275 19.7825 4.2175C20.7725 5.2075 21.5563 6.37167 22.1338 7.71C22.7113 9.04833 23 10.4783 23 12C23 13.5217 22.7113 14.9517 22.1338 16.29C21.5563 17.6283 20.7725 18.7925 19.7825 19.7825C18.7925 20.7725 17.6283 21.5563 16.29 22.1338C14.9517 22.7113 13.5217 23 12 23Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-    content: "";
-}
-header .gnb .gnb_wrap .mypage a {
-    display: block;
-    width: 100%;
-    height: 100%;
 }
 header .gnb .gnb_wrap .search {
     display: none;

@@ -17,10 +17,10 @@ html, body {
     width: 1260px; 
     margin: 0 auto; /* 가운데정렬 */
 }
-@media screen and (max-width:1400px){
+@media screen and (max-width:1300px){
     .wrapper {
-        width: 90%;
-        margin: 0 auto;
+        width: auto;
+        margin: 0 20px;
     }
     html, body {
         font-size: 15px;
@@ -35,9 +35,7 @@ html, body {
     }
 }/* media */
 @media screen and (max-width:500px){
-    .wrapper {
-        width: 95%;
-    }
+    
     html, body {
         font-size: 13px;
     }
