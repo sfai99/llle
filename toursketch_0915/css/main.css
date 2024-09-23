@@ -90,6 +90,9 @@
     position: relative;
     z-index: 20;
 }
+.info h2 {
+    display: none;
+}
 .info::before {
     position: absolute;
     left: calc(50% - 630px);
