@@ -358,6 +358,7 @@ footer .copyright {
     }
     footer .footer_sub .f_nav ul {
         justify-content: center;
+        margin-bottom: 20px;
     }
     footer .footer_sub .f_nav ul.f_nav01 {
         gap: 10px;
