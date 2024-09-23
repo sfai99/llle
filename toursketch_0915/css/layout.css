@@ -111,7 +111,6 @@ header .gnb .gnb_wrap .depth2 li a {
     display: block;
     color: #666;
     line-height: 49px;
-    margin: 0 28px;
 }
 header .gnb .gnb_wrap .depth2 li a:hover {
     color: var(--color-main);
@@ -124,7 +123,6 @@ header .gnb .gnb_wrap .mypage {
     line-height: 0;
     margin: 22px 40px 0 0;
 }
-
 header .gnb .gnb_wrap .mypage a {
     display: block;
     width: 25px;
@@ -144,6 +142,9 @@ header.menu_over .gnb .gnb_wrap .depth2 {
     header {
         padding: 0 30px;
     }
+    header h1 {
+        width: 110px;
+    }
     header .gnb .gnb_wrap .depth1 {
         display: none;
     }
@@ -153,15 +154,18 @@ header.menu_over .gnb .gnb_wrap .depth2 {
         padding: 0 20px;
         height: 60px;
     }
-    header .logo a::before {
+    header h1 {
         width: 100px;
+        margin-top: 12px;
     }
     header .gnb .gnb_open {
         width: 20px;
         height: 20px
     }
     header .gnb .gnb_wrap .mypage {
-        right: 35px;
+        margin-top: 19px;
+    }
+    header .gnb .gnb_wrap .mypage a {
         width: 20px;
         height: 20px;
     }
@@ -171,17 +175,12 @@ header.menu_over .gnb .gnb_wrap .depth2 {
         padding: 0 20px;
         height: 45px;
     }
-    header .logo a::before {
-        top: -3px;
-        width: 85px;
-        height: 25px;
-    }
+
     header .gnb .gnb_open {
         width: 20px;
         height: 20px
     }
-    header .gnb .gnb_wrap .mypage {
-        right: 35px;
+    header .gnb .gnb_wrap .mypage a {
         width: 20px;
         height: 20px;
     }
