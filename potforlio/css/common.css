@@ -1,0 +1,32 @@
+html, body {
+    font-family: "Paperlogy" ,"Black Han Sans", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0; /* 자간 */
+    line-height: 1.4; /* 배수 - 글자크기에 1.4배 */
+    color: #3d3d3d; /* 글자 색상 */
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+    word-wrap: break-word; /* 만약 단어가 엄청 길면 강제로 줄바꿈 실행 */
+}
+#wrap {
+    min-width: 1427px;
+    overflow: hidden;
+}
+.wrapper {
+    width: 1427px; 
+    margin: 0 auto;
+}
+
+::selection {
+    background-color: #fff;
+    color: #FB6D61;
+}
+:root {
+    --color-main-y : #FFDC65;
+    --color-main-y05 : rgba(255,203,30,0.5);
+    --color-main-r : #FB6D61;
+    --color-main-r05 : rgba(251,109,97,0.5);
+    --color-background: #FFFBF1;
+    --tit-fontfamily : 'Black Han Sans';
+    --color-txt-y : #FFD546;
+}
