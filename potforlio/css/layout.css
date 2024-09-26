@@ -22,7 +22,6 @@ header .gnb .gnb_wrap ul li {
     text-align: center;
 }
 header .gnb .gnb_wrap ul li.active a {
-    color: var(--color-txt-y);
     position: relative;
 }
 header .gnb .gnb_wrap ul li.active a::after {
@@ -40,5 +39,5 @@ header .gnb .gnb_wrap ul li.active a::after {
 header .gnb .gnb_wrap ul li a {
     line-height: 100px;
     font-size: 20px;
-    color: var(--color-main-y05);
+    color: var(--color-txt-y);
 }

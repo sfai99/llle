@@ -78,12 +78,12 @@
 }
 .profile .wrapper {
     position: relative;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 .profile h2 {
     position: absolute;
     left: 0;
-    top: 46%;
+    top: 48%;
     transform: translate(-35%, -50%) rotate(270deg);
 }
 .profile h2 span {
@@ -159,6 +159,25 @@
 .profile .profile02 ul.list li strong {
     font-size: 25px;
 }
+.profile .profile_02 ul.list {
+    margin-top: 16px;
+}
+.profile .profile_02 ul.list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 270px;
+}
+.profile .profile_02 ul.list li span {
+    display: block;
+    color: #666;
+    margin-top: 0;
+}
+.profile .profile_02 ul.list li strong {
+    font-size: 25px;
+}
+
 
 .project {
     background-color: var(--color-background);

@@ -17,10 +17,10 @@ html, body {
     width: 1260px; 
     margin: 0 auto; /* 가운데정렬 */
 }
-@media screen and (max-width:1400px){
+@media screen and (max-width:1300px){
     .wrapper {
-        width: 90%;
-        margin: 0 auto;
+        width: auto;
+        margin: 0 20px;
     }
     html, body {
         font-size: 15px;
@@ -35,9 +35,7 @@ html, body {
     }
 }/* media */
 @media screen and (max-width:500px){
-    .wrapper {
-        width: 95%;
-    }
+    
     html, body {
         font-size: 13px;
     }
@@ -51,6 +49,7 @@ html, body {
 :root {
     --color-main : #17A951;
     --tit-txt-size : 50px;
+    --tit_sub-txt-size : 23px;
     --tit-lineheight : 1.2;
     --tit-txt-color : #2d2d2d;
     --txt-bold : 600;
@@ -68,7 +67,7 @@ html, body {
     :root {--tit-txt-size : 42px;}
 }
 @media screen and (max-width:768px){
-    :root {--tit-txt-size : 40px;}
+    :root {--tit-txt-size : 38px; --tit_sub-txt-size : 20px;}
 }
 @media screen and (max-width:500px){
     :root {--tit-txt-size : 32px;}
