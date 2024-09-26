@@ -9,7 +9,7 @@ html, body {
     word-wrap: break-word; /* 만약 단어가 엄청 길면 강제로 줄바꿈 실행 */
 }
 #wrap {
-    min-width: 1427px;
+    min-width: 1467px;
     overflow: hidden;
 }
 .wrapper {

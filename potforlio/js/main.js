@@ -9,7 +9,7 @@ $(document).ready(function(){
     
     scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
 
-    responsiveWidth: 1024, /* fullpage를 적용시키지 않을 모바일 사이즈 */
+    //responsiveWidth: 1024, /* fullpage를 적용시키지 않을 모바일 사이즈 */
 
     afterLoad: function(origin, destination, direction, trigger){
       if(destination.index == 0){
