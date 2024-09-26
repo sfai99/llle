@@ -8,9 +8,10 @@ html, body {
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 강제로 줄바꿈 실행 */
 }
-#wrap {
+#wrap, body {
     min-width: 1467px;
     overflow: hidden;
+    position: relative;
 }
 .wrapper {
     width: 1427px; 
