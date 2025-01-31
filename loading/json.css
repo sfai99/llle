@@ -1,0 +1,119 @@
+img {
+    width: 100%;
+}
+
+.json01 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 130px;
+    height: auto;
+    content: "";
+    padding: 30px 40px 10px 40px;
+    background-color: #fff;
+    /*backdrop-filter:blur(10px);*/
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    /*display: none;*/
+}
+.json02 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 130px;
+    height: auto;
+    content: "";
+    padding: 30px 40px 10px 40px;
+    background-color: #fff;
+    /*backdrop-filter:blur(10px);*/
+    border-radius: 15px;
+    /*border-radius: 50%;*/
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+.json03 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 150px;
+    height: auto;
+    content: "";
+    padding: 30px 40px 10px 40px;
+    background-color: #fff;
+    /*backdrop-filter:blur(10px);*/
+    border-radius: 15px;
+    /*border-radius: 50%;*/
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+.progressbar01 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 250px;
+    height: auto;
+    content: "";
+    padding: 20px 20px 5px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+.progressbar02 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 250px;
+    height: auto;
+    content: "";
+    padding: 30px 20px 5px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+.progressbar03 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 250px;
+    height: auto;
+    content: "";
+    padding: 30px 20px 5px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+.progressbar04 {
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 250px;
+    height: auto;
+    content: "";
+    padding: 30px 20px 5px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    display: none;
+}
+
+p {
+    text-align: center;
+    font-size: 15px;
+}
